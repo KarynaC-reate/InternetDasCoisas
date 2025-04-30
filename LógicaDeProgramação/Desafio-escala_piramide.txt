@@ -1,0 +1,19 @@
+Algoritmo "EscalaPiramide"
+var
+    i, j, espacos: inteiro
+    linha: caractere
+inicio
+    para i de 1 ate 5 faca
+        linha := ""
+
+        espacos := 5 - i
+        para j de 1 ate espacos faca
+            linha := linha + " "
+        fimpara
+
+        para j de 1 ate i * 2 - 1 faca
+            linha := linha + "*"
+        fimpara
+        escreval(linha)
+    fimpara
+fimalgoritmo

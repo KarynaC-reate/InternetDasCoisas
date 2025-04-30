@@ -1,0 +1,50 @@
+Algoritmo "parouimpar"
+Var
+   opcao, numero, a, b, c: inteiro
+   resultado, x1, x2, delta: real
+
+inicio
+   escreval("Escolha uma opção:")
+   escreval("1 - Par ou Ímpar")
+   escreval("2 - Bhaskara")
+   escreval("3 - Contador até 50 de 5 em 5")
+   leia(opcao)
+
+   escolha opcao
+      caso 1
+         escreval("Digite um número inteiro:")
+         leia(numero)
+         se (numero mod 2 = 0) entao
+            escreval("O número é Par")
+         senao
+            escreval("O número é Ímpar")
+         fimse
+
+      caso 2
+         escreval("Digite o valor de A:")
+         leia(a)
+         escreval("Digite o valor de B:")
+         leia(b)
+         escreval("Digite o valor de C:")
+         leia(c)
+
+         delta <- b * b - 4 * a * c
+
+         se (delta < 0) entao
+            escreval("Não existem raízes reais!")
+         senao
+            x1 <- (-b + raizq(delta)) / (2 * a)
+            x2 <- (-b - raizq(delta)) / (2 * a)
+            escreval("As raízes são: ", x1, " e ", x2)
+         fimse
+
+      caso 3
+         escreval("Contando de 5 em 5 até 50:")
+         para numero de 0 ate 50 passo 5 faca
+            escreval(numero)
+         fimpara
+
+      outrocaso
+         escreval("Opção inválida.")
+   fimescolha
+fimalgoritmo

@@ -1,0 +1,19 @@
+Algoritmo "bhaskara"
+
+var
+Procedimento Bhas(a,b,c:real)
+
+var
+delta,x1,x2:real
+
+Inicio
+delta<- b^2-4*a*c
+escreval("O valor de delta é ",delta)
+x1/<-(-b+Raizq(delta))/(2*a)
+x2/<-(-b-Raizq(delta))/(2*a)
+fimProcedimento
+
+inicio
+Bhas(4,-5,12)
+
+Fimalgoritmo

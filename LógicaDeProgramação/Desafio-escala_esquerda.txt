@@ -1,0 +1,12 @@
+Algoritmo "RepeticaoEscala"
+var
+    i: inteiro
+    asteriscos: caractere
+inicio
+    asteriscos := "*"
+    para i de 1 ate 5 faca
+        escreva(asteriscos)
+        asteriscos := asteriscos + "*"
+        escreval("")
+    fimpara
+fimalgoritmo

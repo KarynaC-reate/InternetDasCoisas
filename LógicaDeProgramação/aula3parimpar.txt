@@ -1,0 +1,21 @@
+Algoritmo "DetectorPesado"
+
+Var
+  a: inteiro
+
+Procedimento ParImpar()
+
+Inicio
+
+escreval("Digite um número:")
+         se (a%2 = 0) entao
+            escreval("Número ",a, "é par")
+         senao
+            escreval("Número ",a, "é ímpar")
+         fimse
+fimProcedimento
+
+inicio
+ParImpar(6)
+
+Fimalgoritmo

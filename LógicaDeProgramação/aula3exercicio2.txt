@@ -1,0 +1,36 @@
+Algoritmo "DetectorPesado"
+
+Var
+   I: Inteiro
+   N, Pesado: Caractere
+   P, Mai: Real
+Procedimento Topo()
+Inicio
+      LimpaTela
+      escrevaL("--------------------")
+      escrevaL("DETECTOR DE PESADO")
+      escrevaL("Maior Peso ate agora: ", Mai, "kg")
+      escrevaL("--------------------")
+FimProcedimento
+
+Inicio
+Topo()
+      Para I <-1 ate 3 faca
+           Escreva("Digite o nome: ")
+           leia(N)
+           Escreva("Digite o peso de ", N, ": ")
+           leia(P)
+           se (P>Mai) entao
+           MAI<-P
+           Pesado<-N
+      FimSe
+      LimpaTela
+      Topo()
+fimpara
+
+limpatela
+
+Topo()
+escrevaL("A pessoa mais pesada foi ", Pesado,",com",Mai,"quilos.")
+
+Fimalgoritmo
