@@ -25,7 +25,7 @@ public class Classesproject7 {
     panda.cor = "preto";
     panda.carga = 5;
     panda.ponta = 0.9f;
-    
+        
         System.out.println(panda.modelo);
         System.out.println(panda.cor);
         System.out.println(panda.carga);
