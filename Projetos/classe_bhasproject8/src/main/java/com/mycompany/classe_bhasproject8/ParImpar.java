@@ -6,10 +6,12 @@ public class ParImpar {
     
     private int valor;
 
+    //contructor
     public ParImpar(int valor) {
         this.valor = valor;
     }
-
+    
+    //getter and setter
     public int getValor() {
         return valor;
     }
