@@ -39,9 +39,11 @@ public class Bhaskaraa {
     
     
     public double calcularDelta(){
-        return (Math.pow(this.getB(),2)-(4*this.getA()*this.getC()));
-          
+        return (Math.pow(this.getB(),2)+(-4*this.getA()*this.getC()));
+   
     }
+
+ 
     public void calcularRaiz(){
         double delta = calcularDelta();
         if (delta <0){
@@ -52,7 +54,8 @@ public class Bhaskaraa {
             System.out.format("DELTA: %.2f ",delta);
             System.out.format("X1: %.2f ",x1);
             System.out.format("X2: %.2f ",x2);
+            
         }
-    
-}
+        
+    }
 }

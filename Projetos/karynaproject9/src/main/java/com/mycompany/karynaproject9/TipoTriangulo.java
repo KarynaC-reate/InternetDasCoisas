@@ -1,6 +1,7 @@
 //clase TipoTriangulo
 package com.mycompany.karynaproject9;
 
+
 public class TipoTriangulo {   
     private double ladoA,ladoB,ladoC;
 
@@ -35,11 +36,9 @@ public class TipoTriangulo {
     public void setLadoC(double ladoC) {
         this.ladoC = ladoC;
     }
-
-       
+      
     
     public String verificaTriangulo(){
-        Scanner teclado = new Scanner(System.in);
         
         if(ladoA+ladoB>ladoC && ladoA + ladoC>ladoB && ladoB +ladoC>ladoA){
             if(ladoA==ladoB && ladoB==ladoC){
@@ -49,12 +48,9 @@ public class TipoTriangulo {
             }else{
                 System.out.println("O triangulo e escaleno ");
             }
-             teclado.close();   
-            //if(Math.pow(ladoA,2)+Math.pow(ladoB,2)==Math.pow(ladoC,2) ||
-            //        Math.pow(ladoA,2)+Math.pow(ladoC,2)==Math.pow(ladoB,2) ||
-             //       Math.pow(ladoB,2)+Math.pow(ladoC,2)==Math.pow(ladoA,2)){
-             //   System.out.println("O triangulo e retangulo ");
-            //else if
+                    
         }
+        return null;
+        
     }    
 }
