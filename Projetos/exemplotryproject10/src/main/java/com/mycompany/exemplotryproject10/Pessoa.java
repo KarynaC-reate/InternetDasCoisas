@@ -7,8 +7,7 @@ import java.time.Period;
 public class Pessoa {
     private String nome, cpf;
     private LocalDate dataNascimento;
-    private double altura, peso;
-    
+    private double altura, peso;   
 
     //constructor
     public Pessoa(String nome, String cpf, LocalDate dataNascimento, double altura, double peso) {
