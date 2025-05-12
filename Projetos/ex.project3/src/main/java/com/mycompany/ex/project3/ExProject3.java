@@ -15,7 +15,7 @@ public class ExProject3 {
         int cont =0;
         
         do{
-            System.out.println(x:cont);
+            System.out.println(cont);
             cont++;            
         }while(cont <=5);    
     }
