@@ -1,10 +1,8 @@
 //classe bhaskara com raiz não real
 package com.mycompany.karynaproject9;
 
-
 public class Bhaskaraa {
-    private double a,b,c;
-    
+    private double a,b,c;   
     
     //constructor
     public Bhaskaraa(double a, double b, double c) {

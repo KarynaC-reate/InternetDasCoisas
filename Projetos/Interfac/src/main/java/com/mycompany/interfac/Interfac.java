@@ -1,3 +1,4 @@
+//main da interface
 package com.mycompany.interfac;
 
 public class Interfac {

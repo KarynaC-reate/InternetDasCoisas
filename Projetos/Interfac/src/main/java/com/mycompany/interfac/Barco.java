@@ -1,7 +1,6 @@
 //casse objeto
 package com.mycompany.interfac;
 
-
 public class Barco implements Transporte{
     
     @Override

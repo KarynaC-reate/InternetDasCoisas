@@ -1,4 +1,4 @@
-//classe modelo para outras classes
+//classe abstrata (mãe, modelo para outras classes filhas)
 package com.mycompany.polimorfismo;
 
 public class Mamifero {

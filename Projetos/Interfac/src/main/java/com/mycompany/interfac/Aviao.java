@@ -5,6 +5,6 @@ public class Aviao implements Transporte{
        
     @Override
     public void mover(){
-        System.out.println("✈ O avião está voando pelos céus. ");
+        System.out.println("✈ O aviao está voando pelos ceus. ");
     }
 }

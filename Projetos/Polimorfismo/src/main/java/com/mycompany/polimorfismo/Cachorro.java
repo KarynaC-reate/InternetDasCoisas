@@ -1,4 +1,4 @@
-
+//classe
 package com.mycompany.polimorfismo;
 
 public class Cachorro extends Mamifero{
