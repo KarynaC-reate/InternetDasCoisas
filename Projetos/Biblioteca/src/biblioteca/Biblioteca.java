@@ -12,7 +12,7 @@ public class Biblioteca {
             //System.out.println("Deu errado ");
         //}
         UsuarioDAO usuarioDAO = new UsuarioDAO();
-        Usuario usuario = new Usuario(1,"karyna","k@gmail.com","2222","k");
+        Usuario usuario = new Usuario(1,"karyna","k@gmail.com","61-2222","k");
        
         try{
             usuarioDAO.criarUsuario(usuario);
