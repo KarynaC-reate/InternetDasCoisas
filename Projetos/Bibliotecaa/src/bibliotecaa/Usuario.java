@@ -1,15 +1,14 @@
 
-package biblioteca;
+package bibliotecaa;
 
 public class Usuario {
-    private int id; 
+     private int id; 
     private String nome;
     private String email; 
     private String telefone;
     private String tipo_usuario;
     
-    
-    //constructor
+//constructor
     public Usuario(int id, String nome, String email, String telefone, String tipo_usuario) {
         this.id = id;
         this.nome = nome;
@@ -18,7 +17,7 @@ public class Usuario {
         this.tipo_usuario = tipo_usuario;
     }
     
-    //getter and setter
+//getter and setter
     public int getId() {
         return id;
     }
@@ -58,5 +57,6 @@ public class Usuario {
     public void setTipo_usuario(String tipo_usuario) {
         this.tipo_usuario = tipo_usuario;
     }
+    
     
 }

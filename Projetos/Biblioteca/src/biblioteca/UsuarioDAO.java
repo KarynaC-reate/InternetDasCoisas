@@ -12,7 +12,7 @@ public class UsuarioDAO {
         this.connection = new ConnectionFactory().conectaBD();
     }
     
-    public void criarUsuario(Usuario usuario) throws SQLException;
+    public void criarUsuario(Usuario usuario) throws SQLException{
         String sql = "INSERT INTO tb_usuarios(nome,email,"
                 + "telefone,tipo_usuario)VALUES(?,?,?,?)";
        
@@ -33,6 +33,7 @@ public class UsuarioDAO {
         }
         finally{
             if(pstmt !=null) pstmt.close();
+            }
         }
-    
-}
+    }
+
