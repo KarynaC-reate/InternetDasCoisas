@@ -1,4 +1,3 @@
-
 package bibliotecaa;
 
 import java.sql.Connection;
@@ -22,7 +21,7 @@ public class UsuarioDAO {
                 + "telefone,tipo_usuario)VALUES(?,?,?,?)";
        
         PreparedStatement pstmt = null;
-        ResultSet rse = null;
+        ResultSet rs = null;
        
         try{
             pstmt = connection.prepareStatement(sql);
@@ -38,7 +37,7 @@ public class UsuarioDAO {
            
         }
         finally{
-            if(rse !=null) rse.close();
+            if(rs !=null) rs.close();
             if(pstmt !=null) pstmt.close();           
             }
         }
@@ -71,8 +70,34 @@ public class UsuarioDAO {
             if(pstm !=null) pstm.close();
             }
             return lista;
+            
+    public Usuario buscarUsuarioPorId(int id) throws SQLException{
+        String sql = "SELECT * FROM usuarios WHERE id=?";
+        PreparedStatement pstmt = null;
+        ResultSet rs = null;
+        Usuario usuario = null;
+        
+        try{
+            pstmt = connection.prepareStatement(sql);
+            pstmt.setInt(1, id);
+            rs = pstmt.executeQuery();
+            
+            if(rs.next()){
+                usuario = new Usuario(0,"","","","");
+                usuario.setId(rs.getInt("Id"));
+                usuario.setNome(rs.getString("Nome"));
+                usuario.setEmail(rs.getString("Email"));
+                usuario.setTelefone(rs.getString("Telefone"));
+                usuario.setTipo_usuario(rs.getString("tipo_usuario"));
+                
+            }
+        }catch (SQLException e){
+            System.out.println("Deu errado: ");
+        }finally{
+            if(rs !=null)rs.close();
+            if(pstmt !=null)pstmt.close();
         }
-    }       
-
-
+        return usuario;
+    }  
+}
 

@@ -9,7 +9,7 @@ public class Banco {
         System.out.println("=====BEM-VINDO AO BANCO===== "); 
         Scanner teclado = new Scanner(System.in);
         
-        System.out.println("Digite o numero da sua conta: ");
+        System.out.println("Digite o numero da sua conta:🔒 ");
         int numConta = teclado.nextInt();
         teclado.nextLine();
         

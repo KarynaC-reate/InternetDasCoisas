@@ -1,12 +1,8 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
-
 package com.mycompany.mavenproject1;
 
 import java.util.Scanner;
 
-public class exercicioproject1 {
+public class Exercicio_project_1 {
     public static void main(String[] args) {
         
     Scanner teclado = new Scanner(System.in);

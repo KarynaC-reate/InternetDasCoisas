@@ -2,7 +2,7 @@
 package bibliotecaa;
 
 public class Usuario {
-     private int id; 
+    private int id; 
     private String nome;
     private String email; 
     private String telefone;
@@ -16,6 +16,11 @@ public class Usuario {
         this.telefone = telefone;
         this.tipo_usuario = tipo_usuario;
     }
+    
+//constructor vazio
+    public Usuario() {
+    }
+     
     
 //getter and setter
     public int getId() {
@@ -57,6 +62,5 @@ public class Usuario {
     public void setTipo_usuario(String tipo_usuario) {
         this.tipo_usuario = tipo_usuario;
     }
-    
-    
+   
 }
