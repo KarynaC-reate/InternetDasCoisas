@@ -7,8 +7,9 @@ import java.sql.SQLException;
 public class ConnectionFactory {
     public Connection conectaDB(){
         Connection conn = null;
+        
         try{
-            String url = "jdbc:mysql://locslhost:3306/cadastro?useSS1=false";
+            String url = "jdbc:mysql://localhost:3306/cadastro?useSS1=false";
             String user = "root";
             String password = "";
             conn = DriverManager.getConnection(url, user, password);

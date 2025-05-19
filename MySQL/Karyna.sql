@@ -1,6 +1,6 @@
 -- DDL
-CREATE DATABASE IF NOT EXISTS db_cadastro;
-USE db_cadastro;
+CREATE DATABASE cadastro;
+USE cadastro;
 
 CREATE TABLE Usuarios(
     id INT AUTO_INCREMENT PRIMARY KEY,

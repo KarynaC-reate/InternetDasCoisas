@@ -6,8 +6,7 @@ import java.sql.SQLException;
 
 import java.sql.ResultSet;
 import java.util.ArrayList;
-import java.util.List;
-        
+import java.util.List;      
 
 public class UsuarioDAO {
     private final Connection connection;

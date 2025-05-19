@@ -16,6 +16,12 @@ public class Carro {
         this.portas = portas;
     }
     
+    //constructor
+
+    public Carro() {
+    }
+    
+    
     //getter and setter
     public int getId() {
         return id;

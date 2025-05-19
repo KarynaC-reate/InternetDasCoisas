@@ -5,19 +5,13 @@ import java.util.Scanner;
 
 public class Banco {
 
-    public static void main(String[] args) {        
+    public static void main(String[] args) {   
+        ContaBanco banco = new ContaBanco();
+        
+        
+        
         System.out.println("=====BEM-VINDO AO BANCO===== "); 
         Scanner teclado = new Scanner(System.in);
-        
-        System.out.println("Digite o numero da sua conta:🔒 ");
-        int numConta = teclado.nextInt();
-        teclado.nextLine();
-        
-        System.out.println("Tipo da conta(Corrente ou Poupança): ");
-        String tipo = teclado.nextLine();
-        
-        System.out.println("Dono da conta: ");
-        String dono = teclado.nextLine();
         
         System.out.println("Escolha uma opção: ");
         System.out.println("1 - Abrir conta ");                       
@@ -27,9 +21,22 @@ public class Banco {
         System.out.println("5 - Pagar mensalidade ");
         int opcao = teclado.nextInt();
         
+        System.out.println("Digite o numero da sua conta:🔒 ");
+        int numConta = teclado.nextInt();
+        teclado.nextLine();
+        
+        System.out.println("Tipo da conta(Corrente ou Poupança): ");
+        String tipo = teclado.nextLine();
+        
+        System.out.println("Dono da conta: ");
+        String dono = teclado.nextLine();           
+        
         switch (opcao){
+            case 1:
+               banco.abrirConta(dono, numConta);
             
         }
+        
         
     }
 }
