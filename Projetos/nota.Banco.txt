@@ -1,0 +1,147 @@
+import java.util.ArrayList;
+import java.util.List;
+
+public class BancoApp {
+
+    public static void main(String[] args) {
+        Banco banco = new Banco();
+
+        // Abrindo uma conta
+        try {
+            banco.abrirConta("12345-6", 1000.0);
+            System.out.println("Conta aberta com sucesso.");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
+        // Depositando dinheiro
+        try {
+            banco.depositar("12345-6", 500.0);
+            System.out.println("Depósito realizado. Saldo atual: " + banco.getSaldo("12345-6"));
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
+        // Sacando dinheiro
+        try {
+            banco.sacar("12345-6", 200.0);
+            System.out.println("Saque realizado. Saldo atual: " + banco.getSaldo("12345-6"));
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
+        // Pagando mensalidade
+        try {
+            banco.pagarMensalidade("12345-6", 50.0);
+            System.out.println("Mensalidade paga. Saldo atual: " + banco.getSaldo("12345-6"));
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+
+        // Fechando a conta
+        try {
+            banco.fecharConta("12345-6");
+            System.out.println("Conta fechada com sucesso.");
+        } catch (IllegalArgumentException e) {
+            System.out.println(e.getMessage());
+        }
+    }
+}
+
+class Banco {
+    private List<Conta> contas = new ArrayList<>();
+
+    public void abrirConta(String numero, double saldoInicial) {
+        for (Conta conta : contas) {
+            if (conta.getNumero().equals(numero)) {
+                throw new IllegalArgumentException("Erro: Conta já existe.");
+            }
+        }
+        contas.add(new Conta(numero, saldoInicial));
+    }
+
+    public void fecharConta(String numero) {
+        for (Conta conta : contas) {
+            if (conta.getNumero().equals(numero)) {
+                contas.remove(conta);
+                return;
+            }
+        }
+        throw new IllegalArgumentException("Erro: Conta não encontrada.");
+    }
+
+    public void depositar(String numero, double valor) {
+        for (Conta conta : contas) {
+            if (conta.getNumero().equals(numero)) {
+                conta.depositar(valor);
+                return;
+            }
+        }
+        throw new IllegalArgumentException("Erro: Conta não encontrada.");
+    }
+
+    public void sacar(String numero, double valor) {
+        for (Conta conta : contas) {
+            if (conta.getNumero().equals(numero)) {
+                conta.sacar(valor);
+                return;
+            }
+        }
+        throw new IllegalArgumentException("Erro: Conta não encontrada.");
+    }
+
+    public void pagarMensalidade(String numero, double valor) {
+        for (Conta conta : contas) {
+            if (conta.getNumero().equals(numero)) {
+                conta.sacar(valor); // Supondo que o pagamento da mensalidade é um saque do saldo
+                return;
+            }
+        }
+        throw new IllegalArgumentException("Erro: Conta não encontrada.");
+    }
+
+    public double getSaldo(String numero) {
+        for (Conta conta : contas) {
+            if (conta.getNumero().equals(numero)) {
+                return conta.getSaldo();
+            }
+        }
+        throw new IllegalArgumentException("Erro: Conta não encontrada.");
+    }
+}
+
+class Conta {
+    private String numero;
+    private double saldo;
+
+    public Conta(String numero, double saldoInicial) {
+        this.numero = numero;
+        this.saldo = saldoInicial;
+    }
+
+    public void depositar(double valor) {
+        if (valor <= 0) {
+            throw new IllegalArgumentException("Erro: Valor de depósito deve ser positivo.");
+        }
+        saldo += valor;
+    }
+
+    public void sacar(double valor) {
+        if (valor <= 0) {
+            throw new IllegalArgumentException("Erro: Valor de saque deve ser positivo.");
+        }
+        if (saldo < valor) {
+            throw new IllegalArgumentException("Erro: Saldo insuficiente para saque.");
+        }
+        saldo -= valor;
+    }
+
+    public double getSaldo() {
+        return saldo;
+    }
+
+    public String getNumero() {
+        return numero;
+    }
+}
+ 
