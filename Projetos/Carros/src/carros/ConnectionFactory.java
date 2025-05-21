@@ -9,7 +9,7 @@ public class ConnectionFactory {
         Connection conn = null;
         
         try{
-            String url = "jdbc:mysql://localhost:3306/cadastro?useSS1=false";
+            String url = "jdbc:mysql://localhost:3306/cadastro?useSSL=false";
             String user = "root";
             String password = "";
             conn = DriverManager.getConnection(url, user, password);
