@@ -1,11 +1,11 @@
 //OlaSwing->new->JFrame form-> minhasegundajanela.
-
 package olaswing;
 import javax.swing.*;
 
 public class OlaSwing {
 
     public static void main(String[] args) {
+    /*
      JFrame janela = new JFrame("Minha primeira Janela. ");
      janela.setSize(300,200);
      janela.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
@@ -25,5 +25,15 @@ public class OlaSwing {
      janela.setVisible(true);        
 
     }
+    */
+    
+       Pessoa pess = new Pessoa("","","","");
+       pess.setNome("Joao");
+       
+       System.out.println(pess.getNome());
+    }
+    
+    
+    
     
 }
