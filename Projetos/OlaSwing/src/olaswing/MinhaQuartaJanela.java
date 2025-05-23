@@ -139,7 +139,7 @@ public class MinhaQuartaJanela extends javax.swing.JFrame {
 
     private void btnResultadoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnResultadoActionPerformed
 
-    double a,b,c,x1,x2;
+    double a,b,c;
     a = Integer.parseInt(txtA.getText());
     b = Integer.parseInt(txtB.getText());
     c = Integer.parseInt(txtC.getText());
@@ -147,14 +147,13 @@ public class MinhaQuartaJanela extends javax.swing.JFrame {
     double delta = Math.pow(b,2)-4*a*c;
     
     lblDeltaResul.setText(Double.toString(delta));     
-     
-    x1 = Integer.parseInt(lblX1Resul.getText());
-    x2 = Integer.parseInt(lblX2Resul.getText());
     
+    double x1 = (-b+Math.sqrt(delta))/(2*a);
+    double x2 = (-b-Math.sqrt(delta))/(2*a);
    
     
     lblX1Resul.setText(Double.toString(x1));
-    lblX1Resul.setText(Double.toString(x2));
+    lblX2Resul.setText(Double.toString(x2));
     
     
     }//GEN-LAST:event_btnResultadoActionPerformed

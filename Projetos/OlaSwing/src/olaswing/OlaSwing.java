@@ -27,13 +27,16 @@ public class OlaSwing {
     }
     */
     
-       Pessoa pess = new Pessoa("","","","");
-       pess.setNome("Joao");
+       Pessoa pess = new Pessoa("Joao ","000 ","M ","123456789-10 ");        
+       System.out.println("Nome: "+pess.getNome()+ "CPF: "+pess.getCpf()+ "Sexo: "+pess.getSexo()+ "Endereco "+pess.getEndereco());
        
-       System.out.println(pess.getNome());
-    }
-    
-    
-    
+       pess.setNome("Maria ");  
+       pess.setCpf("222222222-22 ");
+       pess.setSexo("F ");
+       pess.setEndereco("222 ");
+       
+       System.out.println("Nome: "+pess.getNome()+ "CPF: "+pess.getCpf()+ "Sexo: "+pess.getSexo()+ "Endereco "+pess.getEndereco());
+
+    }          
     
 }

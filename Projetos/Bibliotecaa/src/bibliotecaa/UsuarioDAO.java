@@ -69,7 +69,9 @@ public class UsuarioDAO {
             if(pstm !=null) pstm.close();
             }
             return lista;
+        }    
             
+    
     public Usuario buscarUsuarioPorId(int id) throws SQLException{
         String sql = "SELECT * FROM usuarios WHERE id=?";
         PreparedStatement pstmt = null;
@@ -97,6 +99,7 @@ public class UsuarioDAO {
             if(pstmt !=null)pstmt.close();
         }
         return usuario;
-    }  
+     }       
+    
 }
 

@@ -20,7 +20,7 @@ public class Karynaproject9 {
         System.out.println(numero.verificaParEImpar());
         
     //BHASKARA
-        Bhaskaraa bha = new Bhaskaraa(1,2,-14);  
+        Bhaskaraa bha = new Bhaskaraa(1,5,-14);  
         bha.calcularRaiz();
 
     //TRIANGULOS 
@@ -31,13 +31,13 @@ public class Karynaproject9 {
 //escrevendo     
     String textoA = String.valueOf(tri);
     String textoB = String.valueOf(bha);
-    String textoC = numero.verificaParEImpar();
+    //String textoC = numero.verificaParEImpar();
         String caminhoArquivo = "notas.txt";
         
     try (BufferedWriter escritor = new BufferedWriter(new FileWriter(caminhoArquivo))) {
         escritor.write(textoA);
         escritor.write(textoB);
-        escritor.write(textoC);
+        //escritor.write(textoC);
         System.out.println("SALVO "+caminhoArquivo);            
             
     } catch (IOException e) {

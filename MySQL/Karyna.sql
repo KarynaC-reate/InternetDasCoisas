@@ -2,7 +2,7 @@
 CREATE DATABASE cadastro;
 USE cadastro;
 
-CREATE TABLE Usuarios(
+CREATE TABLE tb_usuarios(
     id INT AUTO_INCREMENT PRIMARY KEY,
     nome VARCHAR(100),
     email VARCHAR(100),
@@ -11,4 +11,4 @@ CREATE TABLE Usuarios(
 
 )AUTO_INCREMENT=1;
 
-SELECT * FROM Usuarios;
+SELECT * FROM tb_usuarios;
