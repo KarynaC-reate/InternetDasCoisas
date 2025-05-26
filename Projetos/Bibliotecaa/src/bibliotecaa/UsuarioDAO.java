@@ -73,7 +73,7 @@ public class UsuarioDAO {
             
     
     public Usuario buscarUsuarioPorId(int id) throws SQLException{
-        String sql = "SELECT * FROM usuarios WHERE id=?";
+        String sql = "SELECT * FROM tb_usuarios WHERE id=?";
         PreparedStatement pstmt = null;
         ResultSet rs = null;
         Usuario usuario = null;

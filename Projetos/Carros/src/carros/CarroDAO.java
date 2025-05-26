@@ -9,22 +9,22 @@ public class CarroDAO {
     private final Connection connection;
     
     public CarroDAO(){
-        this.connection = new ConnectionFactory().conectaDB();
+        this.connection = new ConnectionFactory().conectaBD();
     }
     
     public void criarCarro(Carro carro)throws SQLException{
-        String sql = "INSERT INTO tb_usuarios(nome,email,"
-                + "telefone,tipo_usuario)VALUES(?,?,?,?)";
+        String sql = "INSERT INTO Carros(marca,ano,"
+                + "tipo,portas)VALUES(?,?,?,?)";
        
         PreparedStatement pstm = null;
         ResultSet rse = null;
         
         try{
             pstm = connection.prepareStatement(sql);
-            pstm.setString(1,carro.getAno());
-            pstm.setString(2,carro.getMarca());
-            pstm.setString(3,carro.getPortas());
+            pstm.setString(1,carro.getMarca());
+            pstm.setString(2,carro.getAno());
             pstm.setString(3,carro.getTipo());
+            pstm.setString(4,carro.getPortas());
             
             pstm.executeUpdate();
             System.out.println("DEU CERTO. ");

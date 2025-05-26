@@ -1,4 +1,3 @@
-
 package bibliotecaa;
 
 import java.sql.Connection;
@@ -8,6 +7,7 @@ import java.sql.SQLException;
 public class ConnectionFactory {
     public Connection conectaBD(){
         Connection conn = null;
+        
         try{
             String url = "jdbc:mysql://localhost:3306/cadastro?useSSL=false";
             String user = "root";

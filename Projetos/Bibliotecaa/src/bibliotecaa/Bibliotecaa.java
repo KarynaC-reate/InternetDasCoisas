@@ -1,7 +1,6 @@
 package bibliotecaa;
 
 import java.sql.SQLException;
-import java.util.List;
 
 public class Bibliotecaa {
     public static void main(String[] args) {    
@@ -26,17 +25,17 @@ public class Bibliotecaa {
      
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         try{
-            int idBuscado=2;
+            int idBuscado=1;
             Usuario usuario = usuarioDAO.buscarUsuarioPorId(idBuscado);
             
             if(usuario !=null){
                            
                     System.out.println("Deu certo ");
-                    System.out.println("ID" +usuario.getId());
-                    System.out.println("NOME" +usuario.getNome());                   
-                    System.out.println("EMAIL" +usuario.getEmail());
-                    System.out.println("TELEFONE" +usuario.getTelefone());
-                    System.out.println("TIPO_USUARIO" +usuario.getTipo_usuario());    
+                    System.out.println("ID: " +usuario.getId());
+                    System.out.println("NOME: " +usuario.getNome());                   
+                    System.out.println("EMAIL: " +usuario.getEmail());
+                    System.out.println("TELEFONE: " +usuario.getTelefone());
+                    System.out.println("TIPO_USUARIO: " +usuario.getTipo_usuario());    
                     System.out.println("----------x----------");
                 }else
                 System.out.println("Nao encontrado: " +idBuscado);

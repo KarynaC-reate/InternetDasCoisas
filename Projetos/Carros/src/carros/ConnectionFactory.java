@@ -5,7 +5,7 @@ import java.sql.DriverManager;
 import java.sql.SQLException;
 
 public class ConnectionFactory {
-    public Connection conectaDB(){
+    public Connection conectaBD(){
         Connection conn = null;
         
         try{
@@ -17,6 +17,5 @@ public class ConnectionFactory {
             System.out.println("Erro " +erro.getMessage());
         }
         return conn;
-    }
-           
+    }        
 }
