@@ -1,33 +1,31 @@
-package bibliotecaa;
+package cinema;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
-
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;      
+import java.util.List;
 
-public class UsuarioDAO {
+public class FilmeDAO {
     private final Connection connection;
     
-    public UsuarioDAO(){     
+    public FilmeDAO(){     
         this.connection = new ConnectionFactory().conectaBD();
     }
     
-    public void criarUsuario(Usuario usuario) throws SQLException{
-        String sql = "INSERT INTO tb_usuarios(nome,email,"
-                + "telefone,tipo_usuario)VALUES(?,?,?,?)";
+    public void criarFilme(Filme filme) throws SQLException{
+        String sql = "INSERT INTO tb_filmes(titulo,genero,"
+                + "ano)VALUES(?,?,?)";
        
         PreparedStatement pstmt = null;
         ResultSet rs = null;
        
         try{
             pstmt = connection.prepareStatement(sql);
-            pstmt.setString(1, usuario.getNome());
-            pstmt.setString(2, usuario.getEmail());
-            pstmt.setString(3, usuario.getTelefone());
-            pstmt.setString(4, usuario.getTipo_usuario());
+            pstmt.setString(1, filme.getTitulo());
+            pstmt.setString(2, filme.getGenero());
+            pstmt.setString(3, filme.getAno());
 
             pstmt.executeUpdate();
             System.out.println("Deu certo. ");
@@ -41,9 +39,9 @@ public class UsuarioDAO {
             }
         }
     
-    public List<Usuario> listarUsuarios()throws SQLException{
-        List<Usuario> lista = new ArrayList<>();
-        String sql = "SELECT * FROM tb_usuarios";
+    public List<Filme> listarFilmes()throws SQLException{
+        List<Filme> lista = new ArrayList<>();
+        String sql = "SELECT * FROM tb_filmes";
         
         PreparedStatement pstm = null;
         ResultSet rs = null;
@@ -52,14 +50,13 @@ public class UsuarioDAO {
             pstm = connection.prepareStatement(sql);
             rs = pstm.executeQuery();
             while (rs.next()){
-                Usuario usuario = new Usuario(0,"","","","");
-                usuario.setId(rs.getInt("Id"));
-                usuario.setNome(rs.getString("nome"));
-                usuario.setEmail(rs.getString("email"));
-                usuario.setTelefone(rs.getString("telefone"));                   
-                usuario.setTipo_usuario(rs.getString("tipo_usuario"));
+                Filme filme = new Filme(0,"","","");
+                filme.setId(rs.getInt("Id"));
+                filme.setTitulo(rs.getString("titulo"));
+                filme.setGenero(rs.getString("genero"));
+                filme.setAno(rs.getString("ano"));
             
-                lista.add(usuario);
+                lista.add(filme);
         }
         }catch (SQLException k){
                 System.out.println("Erro" +k.getMessage());
@@ -69,13 +66,13 @@ public class UsuarioDAO {
             if(pstm !=null) pstm.close();
             }
             return lista;
-        }    
+        }
     
-    public Usuario buscarUsuarioPorId(int id) throws SQLException{
-        String sql = "SELECT * FROM tb_usuarios WHERE id=?";
+    public Filme buscarUsuarioPorId(int id) throws SQLException{
+        String sql = "SELECT * FROM tb_filmes WHERE id=?";
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-        Usuario usuario = null;
+        Filme filme = null;
         
         try{
             pstmt = connection.prepareStatement(sql);
@@ -83,12 +80,11 @@ public class UsuarioDAO {
             rs = pstmt.executeQuery();
             
             if(rs.next()){
-                usuario = new Usuario(0,"","","","");
-                usuario.setId(rs.getInt("Id"));
-                usuario.setNome(rs.getString("Nome"));
-                usuario.setEmail(rs.getString("Email"));
-                usuario.setTelefone(rs.getString("Telefone"));
-                usuario.setTipo_usuario(rs.getString("tipo_usuario"));
+                filme = new Filme(0,"","","");
+                filme.setId(rs.getInt("Id"));
+                filme.setTitulo(rs.getString("Titulo"));
+                filme.setGenero(rs.getString("Genero"));
+                filme.setAno(rs.getString("Ano"));
                 
             }
         }catch (SQLException e){
@@ -97,8 +93,8 @@ public class UsuarioDAO {
             if(rs !=null)rs.close();
             if(pstmt !=null)pstmt.close();
         }
-        return usuario;
+        return filme;
      }       
-    
 }
+
 

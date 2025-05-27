@@ -1,33 +1,31 @@
-package bibliotecaa;
+package padaria;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
-import java.sql.SQLException;
-
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.util.ArrayList;
-import java.util.List;      
+import java.util.List;
 
-public class UsuarioDAO {
+public class ComidaDAO {
     private final Connection connection;
     
-    public UsuarioDAO(){     
+    public ComidaDAO(){     
         this.connection = new ConnectionFactory().conectaBD();
     }
     
-    public void criarUsuario(Usuario usuario) throws SQLException{
-        String sql = "INSERT INTO tb_usuarios(nome,email,"
-                + "telefone,tipo_usuario)VALUES(?,?,?,?)";
+    public void criarUsuario(Comida comida) throws SQLException{
+        String sql = "INSERT INTO tb_comidas(nome,preco,"
+                + "tipo)VALUES(?,?,?)";
        
         PreparedStatement pstmt = null;
         ResultSet rs = null;
        
         try{
             pstmt = connection.prepareStatement(sql);
-            pstmt.setString(1, usuario.getNome());
-            pstmt.setString(2, usuario.getEmail());
-            pstmt.setString(3, usuario.getTelefone());
-            pstmt.setString(4, usuario.getTipo_usuario());
+            pstmt.setString(1, comida.getNome());
+            pstmt.setString(2, comida.getPreco());
+            pstmt.setString(3, comida.getTipo());
 
             pstmt.executeUpdate();
             System.out.println("Deu certo. ");
@@ -41,9 +39,9 @@ public class UsuarioDAO {
             }
         }
     
-    public List<Usuario> listarUsuarios()throws SQLException{
-        List<Usuario> lista = new ArrayList<>();
-        String sql = "SELECT * FROM tb_usuarios";
+    public List<Comida> listarComidas()throws SQLException{
+        List<Comida> lista = new ArrayList<>();
+        String sql = "SELECT * FROM tb_comidas";
         
         PreparedStatement pstm = null;
         ResultSet rs = null;
@@ -52,14 +50,13 @@ public class UsuarioDAO {
             pstm = connection.prepareStatement(sql);
             rs = pstm.executeQuery();
             while (rs.next()){
-                Usuario usuario = new Usuario(0,"","","","");
-                usuario.setId(rs.getInt("Id"));
-                usuario.setNome(rs.getString("nome"));
-                usuario.setEmail(rs.getString("email"));
-                usuario.setTelefone(rs.getString("telefone"));                   
-                usuario.setTipo_usuario(rs.getString("tipo_usuario"));
+                Comida comida = new Comida(0,"","","");
+                comida.setId(rs.getInt("Id"));
+                comida.setNome(rs.getString("nome"));
+                comida.setPreco(rs.getString("preco"));
+                comida.setTipo(rs.getString("Tipo"));                   
             
-                lista.add(usuario);
+                lista.add(comida);
         }
         }catch (SQLException k){
                 System.out.println("Erro" +k.getMessage());
@@ -69,13 +66,13 @@ public class UsuarioDAO {
             if(pstm !=null) pstm.close();
             }
             return lista;
-        }    
+        } 
     
-    public Usuario buscarUsuarioPorId(int id) throws SQLException{
-        String sql = "SELECT * FROM tb_usuarios WHERE id=?";
+    public Comida buscarComidaPorId(int id) throws SQLException{
+        String sql = "SELECT * FROM tb_comidas WHERE id=?";
         PreparedStatement pstmt = null;
         ResultSet rs = null;
-        Usuario usuario = null;
+        Comida comida = null;
         
         try{
             pstmt = connection.prepareStatement(sql);
@@ -83,12 +80,11 @@ public class UsuarioDAO {
             rs = pstmt.executeQuery();
             
             if(rs.next()){
-                usuario = new Usuario(0,"","","","");
-                usuario.setId(rs.getInt("Id"));
-                usuario.setNome(rs.getString("Nome"));
-                usuario.setEmail(rs.getString("Email"));
-                usuario.setTelefone(rs.getString("Telefone"));
-                usuario.setTipo_usuario(rs.getString("tipo_usuario"));
+                comida = new Comida(0,"","","");
+                comida.setId(rs.getInt("Id"));
+                comida.setNome(rs.getString("Nome"));
+                comida.setPreco(rs.getString("preco"));
+                comida.setTipo(rs.getString("Tipo"));
                 
             }
         }catch (SQLException e){
@@ -97,8 +93,6 @@ public class UsuarioDAO {
             if(rs !=null)rs.close();
             if(pstmt !=null)pstmt.close();
         }
-        return usuario;
-     }       
-    
+        return comida;
+     }   
 }
-

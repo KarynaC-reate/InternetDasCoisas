@@ -22,7 +22,6 @@ public class Bibliotecaa {
             //System.out.println("Deu ruim ");
         //}
         
-     
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         try{
             int idBuscado=1;
@@ -44,6 +43,8 @@ public class Bibliotecaa {
                 System.out.println("Deu Errado " +k.getMessage());
             }
         }               
+    
+        
 }
     
 
