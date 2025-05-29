@@ -98,7 +98,27 @@ public class UsuarioDAO {
             if(pstmt !=null)pstmt.close();
         }
         return usuario;
-     }       
+    }       
     
+    //DELETE
+    public void deletarUsuario(int id) throws SQLException {
+        String sql = "DELETE FROM tb_usuarios WHERE id = ?";
+        
+        try (Connection conn = ConnectionFactory.getConnection();
+            PreparedStatement pstm = conn.prepareStatement(sql)) {
+            
+            pstm.setInt(1, id);
+            int linhasAfetadas = pstm.executeUpdate();
+            
+            if (linhasAfetadas > 0) {
+                System.out.println("Usuario deletado com sucesso! ");
+            }else {
+                System.out.println("Nenhum usuario encontrado com o ID informado. ");
+            }
+            
+        }catch (SQLException e) {
+            System.out.println("Erro ao deletar usuario: " + e.getMessage());
+        }
+    }
 }
 

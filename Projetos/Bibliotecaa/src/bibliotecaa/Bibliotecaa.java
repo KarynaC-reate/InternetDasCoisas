@@ -13,6 +13,7 @@ public class Bibliotecaa {
             //System.out.println("Deu errado ");
         //}
         
+        //INSERIR USUARIO
         //UsuarioDAO usuarioDAO = new UsuarioDAO();
         //Usuario usuario = new Usuario(1,"Joao","joao@gmail.com","61-2222","aluno");
        
@@ -22,7 +23,8 @@ public class Bibliotecaa {
             //System.out.println("Deu ruim ");
         //}
         
-        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        //BUSCAR USUARIO
+        /*UsuarioDAO usuarioDAO = new UsuarioDAO();
         try{
             int idBuscado=1;
             Usuario usuario = usuarioDAO.buscarUsuarioPorId(idBuscado);
@@ -41,10 +43,20 @@ public class Bibliotecaa {
             
                 }catch (SQLException k){
                 System.out.println("Deu Errado " +k.getMessage());
-            }
-        }               
+            } 
+        }   
+*/    
     
-        
+    //DELETAR USUARIO
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        Usuario usuario = new Usuario();
+       
+        try{
+            usuarioDAO.deletarUsuario(1);
+        }catch (SQLException e){
+            System.out.println("Deu ruim ");
+        }
+    }
 }
     
 

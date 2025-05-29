@@ -36,9 +36,11 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         jLabel4 = new javax.swing.JLabel();
         jLabel5 = new javax.swing.JLabel();
         jLabel6 = new javax.swing.JLabel();
-        btnBuscar = new javax.swing.JButton();
+        btnCadastrados = new javax.swing.JButton();
         jScrollPane1 = new javax.swing.JScrollPane();
         tblTabela = new javax.swing.JTable();
+        btnBuscarID = new javax.swing.JButton();
+        btnAlterar = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -69,12 +71,12 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         jLabel6.setFont(new java.awt.Font("Segoe UI", 1, 18)); // NOI18N
         jLabel6.setText("Usuários Cadastrados");
 
-        btnBuscar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnBuscar.setForeground(new java.awt.Color(0, 102, 204));
-        btnBuscar.setText("Buscar");
-        btnBuscar.addActionListener(new java.awt.event.ActionListener() {
+        btnCadastrados.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnCadastrados.setForeground(new java.awt.Color(0, 102, 204));
+        btnCadastrados.setText("Cadastrados");
+        btnCadastrados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnBuscarActionPerformed(evt);
+                btnCadastradosActionPerformed(evt);
             }
         });
 
@@ -92,6 +94,24 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             }
         ));
         jScrollPane1.setViewportView(tblTabela);
+
+        btnBuscarID.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnBuscarID.setForeground(new java.awt.Color(0, 102, 204));
+        btnBuscarID.setText("Buscar por ID");
+        btnBuscarID.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnBuscarIDActionPerformed(evt);
+            }
+        });
+
+        btnAlterar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
+        btnAlterar.setForeground(new java.awt.Color(0, 102, 204));
+        btnAlterar.setText("Alterar/Deletar");
+        btnAlterar.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnAlterarActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -122,7 +142,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                         .addGap(12, 12, 12)
                         .addComponent(txtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, 139, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGap(59, 59, 59)
+                        .addGap(67, 67, 67)
                         .addComponent(btnSalvarPerformed, javax.swing.GroupLayout.PREFERRED_SIZE, 82, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
@@ -132,12 +152,16 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(153, 153, 153)
-                                .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addGap(60, 60, 60)
+                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 325, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                        .addGap(30, 30, 30))))
+                                .addGap(18, 18, 18)
+                                .addComponent(btnBuscarID)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnCadastrados)
+                                .addGap(18, 18, 18)
+                                .addComponent(btnAlterar)))
+                        .addContainerGap(59, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -163,13 +187,15 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 34, Short.MAX_VALUE)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(txtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))))
                 .addGap(25, 25, 25)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(btnBuscar, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(btnCadastrados, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnBuscarID, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(btnAlterar, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(btnSalvarPerformed, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(66, 66, 66))
         );
@@ -237,8 +263,8 @@ private final UsuarioDAO usuarioDAO = new UsuarioDAO(); //private final ninguém
     
     }//GEN-LAST:event_btnSalvarPerformedActionPerformed
 
-    //BUSCAR
-    private void btnBuscarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarActionPerformed
+    //BUSCAR CADASTRADOS
+    private void btnCadastradosActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnCadastradosActionPerformed
       
         try{
             //limpa a tabela
@@ -265,9 +291,90 @@ private final UsuarioDAO usuarioDAO = new UsuarioDAO(); //private final ninguém
                 "Erro ",
                 JOptionPane.ERROR_MESSAGE);
         }          
-    }//GEN-LAST:event_btnBuscarActionPerformed
+    }//GEN-LAST:event_btnCadastradosActionPerformed
+
+    //BUSCAR POR ID
+    private void btnBuscarIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarIDActionPerformed
+        try{
+        //solicita o id 
+        String input = JOptionPane.showInputDialog(this, "Digite o ID do usuario: ");
+            
+        //valida se foi digitado algo
+        if (input == null || input.trim().isEmpty()) {
+            return; // Usuario cancelou ou não digitou nada
+        }
+            
+        int id = Integer.parseInt(input.trim()); //Converte para inteiro
+        
+        //busca o usuario pelo id
+        Usuario usuario = usuarioDAO.buscarUsuarioPorId(id);
+            
+        //limpa a tabela
+        DefaultTableModel model = (DefaultTableModel) tblTabela.getModel();
+        model.setRowCount(0);
+        
+        if (usuario != null) {
+            //adiciona o usuario na tabela
+            model.addRow(new Object[]{
+            usuario.getId(),
+            usuario.getNome(),
+            usuario.getEmail(),
+            usuario.getTelefone(),
+            usuario.getTipo_usuario()
+        });
+            
+        }else {
+            JOptionPane.showMessageDialog(this,
+                "Usuario com ID " + id + "nao encontrado. ",
+                "Nao encontrado",
+            JOptionPane.INFORMATION_MESSAGE);
+        }
+                
+    }catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this,
+            "ID invalido. Por favor, digite um numero inteiro. ",
+            "Erro de entrada",
+            JOptionPane.INFORMATION_MESSAGE);
+        
+    }catch (SQLException e) {
+        JOptionPane.showMessageDialog(this,
+            "Erro ao buscar usuario: " + e.getMessage(),
+            "Erro",
+            JOptionPane.INFORMATION_MESSAGE);
+        }
+    }//GEN-LAST:event_btnBuscarIDActionPerformed
+
+    //ALTERAR
+    private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
+
+        try{
+        String input = JOptionPane.showInputDialog(this, "Digite o ID do usuario para alterar: ");
+            
+        if (input == null || input.trim().isEmpty()) {
+            return;
+        }
+            
+        int id = Integer.parseInt(input.trim());
+        
+        Usuario usuario = usuarioDAO.buscarUsuarioPorId(id);
+        
+        if (usuario !=null) {
+            EditarUsuarioDialog dialog = new EditarUsuarioDialog(this, usuario, usuarioDAO);
+            dialog.setVisible(true);
+        }else {
+            JOptionPane.showMessageDialog(this, "Usuario com ID " + id + "nao encontrado. ");
+        }
+        
+    }catch (NumberFormatException e) {
+        JOptionPane.showMessageDialog(this, "ID invalido. Digite um numero. ");
+    }catch (SQLException e) {
+        JOptionPane.showMessageDialog(this, "Erro ao buscar usuario:\n " + e.getMessage());
+
+    }
+        
+    }//GEN-LAST:event_btnAlterarActionPerformed
          
- 
+    
     
     /**
      * @param args the command line arguments
@@ -294,7 +401,9 @@ private final UsuarioDAO usuarioDAO = new UsuarioDAO(); //private final ninguém
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnBuscar;
+    private javax.swing.JButton btnAlterar;
+    private javax.swing.JButton btnBuscarID;
+    private javax.swing.JButton btnCadastrados;
     private javax.swing.JButton btnSalvarPerformed;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel2;
