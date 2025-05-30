@@ -351,7 +351,7 @@ private final UsuarioDAO usuarioDAO = new UsuarioDAO(); //private final ninguém
         String input = JOptionPane.showInputDialog(this, "Digite o ID do usuario para alterar: ");
             
         if (input == null || input.trim().isEmpty()) {
-            return;
+            return; 
         }
             
         int id = Integer.parseInt(input.trim());
