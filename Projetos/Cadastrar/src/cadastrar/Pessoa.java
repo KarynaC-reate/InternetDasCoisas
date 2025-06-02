@@ -1,30 +1,26 @@
+package cadastrar;
 
-package pessoa;
-
-public class pessoaa {
+public class Pessoa {
     private int id; 
     private String nome;
     private String email; 
     private String idade;
     private String sexo;
-
     
-    //cons
-    public pessoaa(int id, String nome, String idade, String sexo) {
+    //constructor
+    public Pessoa(int id, String nome, String email, String idade, String sexo) {
         this.id = id;
         this.nome = nome;
-        this.email = idade;
+        this.email = email;
+        this.idade = idade;
         this.sexo = sexo;
     }
     
-    //c vazio
-
-    public pessoaa() {
+    //constructor vazio
+    public Pessoa() {
     }
-
-
-    //g and s
-
+    
+    //getter and setter
     public int getId() {
         return id;
     }
@@ -41,8 +37,16 @@ public class pessoaa {
         this.nome = nome;
     }
 
-    public String getIdade() {
+    public String getEmail() {
         return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getIdade() {
+        return idade;
     }
 
     public void setIdade(String idade) {
@@ -53,7 +57,7 @@ public class pessoaa {
         return sexo;
     }
 
-    public void getSexo(String sexo) {
+    public void setSexo(String sexo) {
         this.sexo = sexo;
     }
     

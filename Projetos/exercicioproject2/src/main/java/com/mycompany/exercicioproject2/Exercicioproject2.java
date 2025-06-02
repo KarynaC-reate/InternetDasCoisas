@@ -1,6 +1,3 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
 
 package com.mycompany.exercicioproject2;
 
@@ -13,7 +10,7 @@ public class Exercicioproject2 {
         
     Scanner opcao = new Scanner(System.in);
     JFrame frame = new JFrame();
-               frame.setAlwaysOnTop(true);
+    frame.setAlwaysOnTop(true);
     
         System.out.print("Escolha as opcoes e 1 a 3: ");
         int escolha=opcao.nextInt();
@@ -25,19 +22,19 @@ public class Exercicioproject2 {
                String num=(n1%2==0)?"Par":"Impar";
                System.out.println(num);      
                
-               
                JOptionPane.showMessageDialog(null, num);
                break;
                
             case 2:  
-               double a=1, b=5, c=14, x1,x2,delta;
+               double a=0, b=0, c=0, x1,x2,delta;
                System.out.println("Informe os Valores de A,B,C: "); 
                double resultado =opcao.nextDouble();
                delta=Math.pow(b,2)-4*a*c;
                x1=(-b+Math.sqrt(delta))/(2*a);
                x2=(-b-Math.sqrt(delta))/(2*a);
                System.out.format("O delta: %.2f\n x1: %.2f\n x2: %.2f",delta,x1,x2); 
-                           
+               JOptionPane.showMessageDialog(null, resultado);
+
                break;
                
             case 3:

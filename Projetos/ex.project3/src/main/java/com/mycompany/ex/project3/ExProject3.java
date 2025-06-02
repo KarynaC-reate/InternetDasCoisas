@@ -1,13 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
 
 package com.mycompany.ex.project3;
 
-/**
- *
- * @author ead
- */
 public class ExProject3 {
 
     public static void main(String[] args) {

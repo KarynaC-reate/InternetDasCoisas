@@ -7,15 +7,12 @@ public class Bhaskara {
     //double x1 = (-b+Math.sqrt(delta))/(2*a);
     //double x2 = (-b-Math.sqrt(delta))/(2*a);
 
-    
     //constructor
     public Bhaskara(double a, double b, double c) {
         this.a = 2;
         this.b = 6;
         this.c = -16;
     }
-      
-    
     
     //getter and setter
     public double getA() {
@@ -41,10 +38,6 @@ public class Bhaskara {
     public void setC(double c) {
         this.c = c;
     }
-
-    
-    
-    
     
     public double calcularDelta(){
         return (Math.pow(this.getB(),2)-(4*this.getA()*this.getC()));

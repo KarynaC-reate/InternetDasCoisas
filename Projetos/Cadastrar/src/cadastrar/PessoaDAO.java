@@ -1,19 +1,18 @@
-package pessoa;
+package cadastrar;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class pessoaDAO {
-    public class PessoaDAO {
+public class PessoaDAO {
     private final Connection connection;
     
     public PessoaDAO(){     
-        this.connection = new ConnectionFactory().conectaBD();
+        this.connection = new ConnectonFactory().conectaBD();
     }
     
-    public void criarPessoa(pessoaa pessoa) throws SQLException{
+    public void criarPessoa(Pessoa pessoa) throws SQLException{
         String sql = "INSERT INTO tb_pessoa(nome,email,"
                 + "idade,sexo)VALUES(?,?,?,?)";
        
@@ -37,6 +36,6 @@ public class pessoaDAO {
             if(rs !=null) rs.close();
             if(pstmt !=null) pstmt.close();           
             }
-      }
-    }
+        }
+      
 }

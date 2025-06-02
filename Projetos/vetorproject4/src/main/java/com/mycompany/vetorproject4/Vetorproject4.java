@@ -1,13 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
 
 package com.mycompany.vetorproject4;
 
-/**
- *
- * @author ead
- */
 public class Vetorproject4 {
 
     public static void main(String[] args) {

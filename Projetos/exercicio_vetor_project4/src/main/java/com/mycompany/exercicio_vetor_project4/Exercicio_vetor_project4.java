@@ -1,13 +1,6 @@
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- */
 
 package com.mycompany.exercicio_vetor_project4;
 
-/**
- *
- * @author ead
- */
 public class Exercicio_vetor_project4 {
 
     public static void main(String[] args) {
