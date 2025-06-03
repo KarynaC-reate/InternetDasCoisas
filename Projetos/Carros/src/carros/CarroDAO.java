@@ -41,7 +41,7 @@ public class CarroDAO {
     
     public List<Carro> listarCarros()throws SQLException{
         List<Carro> lista = new ArrayList<>();
-        String sql = "SELECT * FROM tb_concessionaria";
+        String sql = "SELECT * FROM Carros";
         
         PreparedStatement pstm = null;
         ResultSet rs = null;
@@ -98,6 +98,50 @@ public class CarroDAO {
         return carro;
      } 
     
+     //DELETE
+    public void deletarCarro(int id) throws SQLException {
+        String sql = "DELETE FROM Carros WHERE id = ?";
+        
+        try (Connection conn = ConnectionFactory.getConnection();
+            PreparedStatement pstm = conn.prepareStatement(sql)) {
+            
+            pstm.setInt(1, id);
+            int linhasAfetadas = pstm.executeUpdate();
+            
+            if (linhasAfetadas > 0) {
+                System.out.println("Carro deletado com sucesso! ");
+            }else {
+                System.out.println("Nenhum carro encontrado com o ID informado. ");
+            }
+            
+        }catch (SQLException e) {
+            System.out.println("Erro ao deletar carro: " + e.getMessage());
+        }
+    }
+    
+    //UPDATE 
+    public void atualizarUsuario(Carro carro) throws SQLException {
+        String sql = "UPDATE tb_usuarios SET nome = ?, email = ?, telefone = ?, tipo_usuario = ? WHERE id = ?";
+        
+        try(Connection conn = ConnectionFactory.getConnection();
+            PreparedStatement stmt = conn.prepareStatement(sql)) {
+            
+            stmt.setString(1, carro.getMarca());
+            stmt.setString(2, carro.getAno());
+            stmt.setString(3, carro.getTipo());
+            stmt.setString(4, carro.getPortas());
+            stmt.setInt(5, carro.getId());
+            
+            int linhasAfetadas = stmt.executeUpdate();
+            if (linhasAfetadas > 0) {
+                System.out.println("Carro atualizado com sucesso. ");
+            }else{
+                System.out.println("Carro com ID nao encontrado. ");
+            }
+        }catch (SQLException e) {
+            System.out.println("Erro ao atualizar carro: " + e.getMessage());
+        }
+    }
 }
 
 

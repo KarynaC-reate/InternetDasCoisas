@@ -1,6 +1,7 @@
 package bibliotecaa;
 
 import java.sql.SQLException;
+import java.util.Scanner;
 
 public class Bibliotecaa {
     public static void main(String[] args) {    
@@ -46,7 +47,7 @@ public class Bibliotecaa {
             } 
         }   
 */    
-    
+   /* 
     //DELETAR USUARIO
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         Usuario usuario = new Usuario();
@@ -56,6 +57,17 @@ public class Bibliotecaa {
         }catch (SQLException e){
             System.out.println("Deu ruim ");
         }
+    }*/
+    
+    //ATUALIZAR USUARIO
+    UsuarioDAO usuarioDAO = new UsuarioDAO();
+    Usuario usuario = new Usuario();
+        
+    try{
+        usuarioDAO.atualizarUsuario(usuario);
+    }catch (SQLException e) {
+        System.out.println("DEU ERRADO ");
+    }
     }
 }
     

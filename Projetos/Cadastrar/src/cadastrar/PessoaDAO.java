@@ -22,9 +22,9 @@ public class PessoaDAO {
         try{
             pstmt = connection.prepareStatement(sql);
             pstmt.setString(1, pessoa.getNome());
-            pstmt.setString(1, pessoa.getEmail());
-            pstmt.setString(2, pessoa.getIdade());
-            pstmt.setString(3, pessoa.getSexo());
+            pstmt.setString(2, pessoa.getEmail());
+            pstmt.setString(3, pessoa.getIdade());
+            pstmt.setString(4, pessoa.getSexo());
 
             pstmt.executeUpdate();
             System.out.println("Deu certo. ");

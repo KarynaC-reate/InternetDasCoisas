@@ -22,7 +22,7 @@ public class Padaria {
             //System.out.println("Deu ruim ");
         //}
         
-        ComidaDAO comidaDAO = new ComidaDAO();
+       /* ComidaDAO comidaDAO = new ComidaDAO();
         try{
             int idBuscado=1;
             Comida comida = comidaDAO.buscarComidaPorId(idBuscado);
@@ -41,5 +41,27 @@ public class Padaria {
                 }catch (SQLException k){
                 System.out.println("Deu Errado " +k.getMessage());
             }
-        }      
+        } */   
+    
+    //DELETAR USUARIO
+    /*    ComidaDAO comidaDAO = new ComidaDAO();
+        Comida comida = new Comida();
+       
+        try{
+            comidaDAO.deletarComida(1);
+        }catch (SQLException e){
+            System.out.println("Deu ruim ");
+        }
+    */
+    
+    //ATUALIZAR USUARIO
+    ComidaDAO comidaDAO = new ComidaDAO();
+    Comida comida = new Comida();
+        
+    try{
+        comidaDAO.atualizarUsuario(comida);
+    }catch (SQLException e) {
+        System.out.println("DEU ERRADO ");
+    }
+    }
 }

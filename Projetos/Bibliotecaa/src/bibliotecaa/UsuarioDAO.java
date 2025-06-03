@@ -15,6 +15,7 @@ public class UsuarioDAO {
         this.connection = new ConnectionFactory().conectaBD();
     }
     
+    //inserir usuarios
     public void criarUsuario(Usuario usuario) throws SQLException{
         String sql = "INSERT INTO tb_usuarios(nome,email,"
                 + "telefone,tipo_usuario)VALUES(?,?,?,?)";
@@ -41,6 +42,7 @@ public class UsuarioDAO {
             }
         }
     
+    //listar usuarios
     public List<Usuario> listarUsuarios()throws SQLException{
         List<Usuario> lista = new ArrayList<>();
         String sql = "SELECT * FROM tb_usuarios";
@@ -71,6 +73,7 @@ public class UsuarioDAO {
             return lista;
         }    
     
+    //buscar por id
     public Usuario buscarUsuarioPorId(int id) throws SQLException{
         String sql = "SELECT * FROM tb_usuarios WHERE id=?";
         PreparedStatement pstmt = null;
@@ -118,6 +121,30 @@ public class UsuarioDAO {
             
         }catch (SQLException e) {
             System.out.println("Erro ao deletar usuario: " + e.getMessage());
+        }
+    }
+    
+    //UPDATE 
+    public void atualizarUsuario(Usuario usuario) throws SQLException {
+        String sql = "UPDATE tb_usuarios SET nome = ?, email = ?, telefone = ?, tipo_usuario = ? WHERE id = ?";
+        
+        try(Connection conn = ConnectionFactory.getConnection();
+            PreparedStatement stmt = conn.prepareStatement(sql)) {
+            
+            stmt.setString(1, usuario.getNome());
+            stmt.setString(2, usuario.getEmail());
+            stmt.setString(3, usuario.getTelefone());
+            stmt.setString(4, usuario.getTipo_usuario());
+            stmt.setInt(5, usuario.getId());
+            
+            int linhasAfetadas = stmt.executeUpdate();
+            if (linhasAfetadas > 0) {
+                System.out.println("Usuario atualizado com sucesso. ");
+            }else{
+                System.out.println("Usuario com ID nao encontrado. ");
+            }
+        }catch (SQLException e) {
+            System.out.println("Erro ao atualizar usuario: " + e.getMessage());
         }
     }
 }

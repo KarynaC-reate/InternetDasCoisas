@@ -95,4 +95,49 @@ public class ComidaDAO {
         }
         return comida;
      }   
+    
+    //DELETE
+    public void deletarComida(int id) throws SQLException {
+        String sql = "DELETE FROM tb_comidas WHERE id = ?";
+        
+        try (Connection conn = ConnectionFactory.getConnection();
+            PreparedStatement pstm = conn.prepareStatement(sql)) {
+            
+            pstm.setInt(1, id);
+            int linhasAfetadas = pstm.executeUpdate();
+            
+            if (linhasAfetadas > 0) {
+                System.out.println("Comida deletado com sucesso! ");
+            }else {
+                System.out.println("Nenhuma comida encontrado com o ID informado. ");
+            }
+            
+        }catch (SQLException e) {
+            System.out.println("Erro ao deletar comida: " + e.getMessage());
+        }
+    }
+    
+    //UPDATE 
+    public void atualizarUsuario(Comida comida) throws SQLException {
+        String sql = "UPDATE tb_comidas SET nome = ?, preco = ?, tipo = ? WHERE id = ?";
+        
+        try(Connection conn = ConnectionFactory.getConnection();
+            PreparedStatement stmt = conn.prepareStatement(sql)) {
+            
+            stmt.setString(1, comida.getNome());
+            stmt.setString(2, comida.getPreco());
+            stmt.setString(3, comida.getTipo());
+            stmt.setInt(4, comida.getId());
+            
+            int linhasAfetadas = stmt.executeUpdate();
+            if (linhasAfetadas > 0) {
+                System.out.println("Comida atualizada com sucesso. ");
+            }else{
+                System.out.println("Comida com ID nao encontrado. ");
+            }
+        }catch (SQLException e) {
+            System.out.println("Erro ao atualizar comida: " + e.getMessage());
+        }
+    }
 }
+
