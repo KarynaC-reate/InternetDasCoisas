@@ -47,13 +47,14 @@ public class Bibliotecaa {
             } 
         }   
 */    
-   /* 
-    //DELETAR USUARIO
+    
+  /*  //DELETAR USUARIO
+    
         UsuarioDAO usuarioDAO = new UsuarioDAO();
         Usuario usuario = new Usuario();
        
         try{
-            usuarioDAO.deletarUsuario(1);
+            usuarioDAO.deletarUsuario(0);
         }catch (SQLException e){
             System.out.println("Deu ruim ");
         }
@@ -61,13 +62,14 @@ public class Bibliotecaa {
     
     //ATUALIZAR USUARIO
     UsuarioDAO usuarioDAO = new UsuarioDAO();
-    Usuario usuario = new Usuario();
+    Usuario usuario = new Usuario(0,"","","","");
         
     try{
         usuarioDAO.atualizarUsuario(usuario);
     }catch (SQLException e) {
         System.out.println("DEU ERRADO ");
     }
+   
     }
 }
     
