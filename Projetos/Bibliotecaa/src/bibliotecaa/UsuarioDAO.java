@@ -7,6 +7,8 @@ import java.sql.SQLException;
 import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;      
+import javax.swing.JOptionPane;
+import javax.swing.table.DefaultTableModel;
 
 public class UsuarioDAO {
     private final Connection connection;
@@ -136,6 +138,7 @@ public class UsuarioDAO {
             stmt.setString(3, usuario.getTelefone());
             stmt.setString(4, usuario.getTipo_usuario());
             stmt.setInt(5, usuario.getId());
+            stmt.executeUpdate();
             
             int linhasAfetadas = stmt.executeUpdate();
             if (linhasAfetadas > 0) {
@@ -147,5 +150,27 @@ public class UsuarioDAO {
             System.out.println("Erro ao atualizar usuario: " + e.getMessage());
         }
     }
+    /*
+    public void atualizarTabela() {
+        String sql = "SELECT id, nome, telefone, tipo_usuario FROM tb_usuarios";
+        try (Connection conn = ConnectionFactory.getConnection();
+             PreparedStatement stmt = conn.prepareStatement(sql);
+             ResultSet rs = stmt.executeQuery()) {
+
+            model.setRowCount(0);
+            
+            while (rs.next()) {
+                model.addRow(new Object[]{
+                    rs.getInt("ID"),
+                    rs.getString("Nome"),
+                    rs.getString("Email"),
+                    rs.getString("Telefone"),
+                    rs.getString("tipo_usuario")
+                });
+            }
+        } catch (SQLException e){
+            JOptionPane.showMessageDialog(null, "Erro ao carregar dados: " + e.getMessage());
+        }
+    }*/
 }
 

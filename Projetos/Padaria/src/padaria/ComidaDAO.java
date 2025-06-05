@@ -14,7 +14,7 @@ public class ComidaDAO {
         this.connection = new ConnectionFactory().conectaBD();
     }
     
-    public void criarUsuario(Comida comida) throws SQLException{
+    public void criarComida(Comida comida) throws SQLException{
         String sql = "INSERT INTO tb_comidas(nome,preco,"
                 + "tipo)VALUES(?,?,?)";
        
@@ -107,9 +107,9 @@ public class ComidaDAO {
             int linhasAfetadas = pstm.executeUpdate();
             
             if (linhasAfetadas > 0) {
-                System.out.println("Comida deletado com sucesso! ");
+                System.out.println("Comida deletada com sucesso! ");
             }else {
-                System.out.println("Nenhuma comida encontrado com o ID informado. ");
+                System.out.println("Nenhuma comida encontrada com o ID informado. ");
             }
             
         }catch (SQLException e) {
@@ -118,7 +118,7 @@ public class ComidaDAO {
     }
     
     //UPDATE 
-    public void atualizarUsuario(Comida comida) throws SQLException {
+    public void atualizarComida(Comida comida) throws SQLException {
         String sql = "UPDATE tb_comidas SET nome = ?, preco = ?, tipo = ? WHERE id = ?";
         
         try(Connection conn = ConnectionFactory.getConnection();

@@ -14,6 +14,7 @@ public class FilmeDAO {
         this.connection = new ConnectionFactory().conectaBD();
     }
     
+    //CRIAR
     public void criarFilme(Filme filme) throws SQLException{
         String sql = "INSERT INTO tb_filmes(titulo,genero,"
                 + "ano)VALUES(?,?,?)";
@@ -39,6 +40,7 @@ public class FilmeDAO {
             }
         }
     
+    //LISTAR 
     public List<Filme> listarFilmes()throws SQLException{
         List<Filme> lista = new ArrayList<>();
         String sql = "SELECT * FROM tb_filmes";
@@ -68,7 +70,8 @@ public class FilmeDAO {
             return lista;
         }
     
-    public Filme buscarUsuarioPorId(int id) throws SQLException{
+    //BUSCAR ID
+    public Filme buscarFilmesPorId(int id) throws SQLException{
         String sql = "SELECT * FROM tb_filmes WHERE id=?";
         PreparedStatement pstmt = null;
         ResultSet rs = null;
@@ -95,6 +98,51 @@ public class FilmeDAO {
         }
         return filme;
      }       
+    
+     //DELETE
+    public void deletarFilme(int id) throws SQLException {
+        String sql = "DELETE FROM tb_filmes WHERE id = ?";
+        
+        try (Connection conn = ConnectionFactory.getConnection();
+            PreparedStatement pstm = conn.prepareStatement(sql)) {
+            
+            pstm.setInt(1, id);
+            int linhasAfetadas = pstm.executeUpdate();
+            
+            if (linhasAfetadas > 0) {
+                System.out.println("Filme deletado com sucesso! ");
+            }else {
+                System.out.println("Nenhum filme encontrado com o ID informado. ");
+            }
+            
+        }catch (SQLException e) {
+            System.out.println("Erro ao deletar filme: " + e.getMessage());
+        }
+    }
+    
+    //UPDATE 
+    public void atualizarFilme(Filme filme) throws SQLException {
+        String sql = "UPDATE tb_filmes SET titulo = ?, genero = ?, ano = ? WHERE id = ?";
+        
+        try(Connection conn = ConnectionFactory.getConnection();
+            PreparedStatement stmt = conn.prepareStatement(sql)) {
+            
+            stmt.setString(1, filme.getTitulo());
+            stmt.setString(2, filme.getGenero());
+            stmt.setString(3, filme.getAno());
+            stmt.setInt(4, filme.getId());
+            
+            int linhasAfetadas = stmt.executeUpdate();
+            if (linhasAfetadas > 0) {
+                System.out.println("Filme atualizado com sucesso. ");
+            }else{
+                System.out.println("Filme com ID nao encontrado. ");
+            }
+        }catch (SQLException e) {
+            System.out.println("Erro ao atualizar filme: " + e.getMessage());
+        }
+    }
 }
+
 
 

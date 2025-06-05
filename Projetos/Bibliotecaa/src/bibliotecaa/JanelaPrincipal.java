@@ -337,7 +337,15 @@ private final UsuarioDAO usuarioDAO = new UsuarioDAO(); //private final ninguém
     //ALTERAR
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
 
-        try{
+       String nome = txtNome.getText();
+       String email = txtEmail.getText();
+       String telefone = txtTelefone.getText();
+       String tipo_usuario = txtTipo.getText();
+       
+       atualizarUsuario();
+       listarUsuarios();
+        
+       /* try{
         String input = JOptionPane.showInputDialog(this, "Digite o ID do usuario para alterar: ");
             
         if (input == null || input.trim().isEmpty()) {
@@ -359,9 +367,8 @@ private final UsuarioDAO usuarioDAO = new UsuarioDAO(); //private final ninguém
         JOptionPane.showMessageDialog(this, "ID invalido. Digite um numero. ");
     }catch (SQLException e) {
         JOptionPane.showMessageDialog(this, "Erro ao buscar usuario:\n " + e.getMessage());
-
-    }
-        
+    }*/
+      
     }//GEN-LAST:event_btnAlterarActionPerformed
          
     
@@ -407,4 +414,5 @@ private final UsuarioDAO usuarioDAO = new UsuarioDAO(); //private final ninguém
     private javax.swing.JTextField txtTelefone;
     private javax.swing.JTextField txtTipo;
     // End of variables declaration//GEN-END:variables
+
 }

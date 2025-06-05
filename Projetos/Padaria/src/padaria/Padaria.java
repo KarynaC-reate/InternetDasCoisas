@@ -59,7 +59,7 @@ public class Padaria {
     Comida comida = new Comida();
         
     try{
-        comidaDAO.atualizarUsuario(comida);
+        comidaDAO.atualizarComida(comida);
     }catch (SQLException e) {
         System.out.println("DEU ERRADO ");
     }

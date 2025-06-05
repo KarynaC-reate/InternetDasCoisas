@@ -84,7 +84,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
             }
         });
 
-        btnCadastrados.setText("Cadastrados");
+        btnCadastrados.setText("Buscar");
         btnCadastrados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnCadastradosActionPerformed(evt);
@@ -214,7 +214,7 @@ private final CarroDAO carroDAO = new CarroDAO(); //private final ninguém poder
                 JOptionPane.INFORMATION_MESSAGE);
         
     }catch (SQLException ex){
-        java.util.logging.Logger.getLogger(getClass().getName()).log(java.util.logging.Level.SEVERE,"Erro ao salvar usuario", ex);
+        java.util.logging.Logger.getLogger(getClass().getName()).log(java.util.logging.Level.SEVERE,"Erro ao salvar carro", ex);
         JOptionPane.showMessageDialog(this,
                 "Não foi possível salvar.\nDetalhes: " + ex.getMessage(),
                 "Erro",
@@ -257,7 +257,7 @@ private final CarroDAO carroDAO = new CarroDAO(); //private final ninguém poder
     private void btnBuscarIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarIDActionPerformed
         try{
         //solicita o id 
-        String input = JOptionPane.showInputDialog(this, "Digite o ID do usuario: ");
+        String input = JOptionPane.showInputDialog(this, "Digite o ID do carro: ");
             
         //valida se foi digitado algo
         if (input == null || input.trim().isEmpty()) {
@@ -321,7 +321,7 @@ private final CarroDAO carroDAO = new CarroDAO(); //private final ninguém poder
             EditarCarroDialog dialog = new EditarCarroDialog(this, carro, carroDAO);
             dialog.setVisible(true);
         }else {
-            JOptionPane.showMessageDialog(this, "Usuario com ID " + id + "nao encontrado. ");
+            JOptionPane.showMessageDialog(this, "Carro com ID " + id + "nao encontrado. ");
         }
         
     }catch (NumberFormatException e) {

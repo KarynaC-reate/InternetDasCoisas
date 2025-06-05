@@ -22,10 +22,10 @@ public class Cinema {
             //System.out.println("Deu ruim ");
         //}
         
-        FilmeDAO filmeDAO = new FilmeDAO();
+       /* FilmeDAO filmeDAO = new FilmeDAO();
         try{
             int idBuscado=1;
-            Filme filme = filmeDAO.buscarUsuarioPorId(idBuscado);
+            Filme filme = filmeDAO.buscarFilmesPorId(idBuscado);
             
             if(filme !=null){
                            
@@ -40,6 +40,28 @@ public class Cinema {
             
                 }catch (SQLException k){
                 System.out.println("Deu Errado " +k.getMessage());
-            }
-        }           
+            }*/
+       
+       /*//DELETAR
+    
+        UsuarioDAO usuarioDAO = new UsuarioDAO();
+        Usuario usuario = new Usuario();
+       
+        try{
+            usuarioDAO.deletarUsuario(0);
+        }catch (SQLException e){
+            System.out.println("Deu ruim ");
+        }
+    }*/
+    
+    //ATUALIZAR
+    FilmeDAO filmeDAO = new FilmeDAO();
+    Filme filme = new Filme();
+        
+    try{
+        filmeDAO.atualizarFilme(filme);
+    }catch (SQLException e) {
+        System.out.println("DEU ERRADO ");
+    }
+    }           
 }

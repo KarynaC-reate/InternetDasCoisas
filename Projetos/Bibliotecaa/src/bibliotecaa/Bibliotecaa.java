@@ -62,7 +62,7 @@ public class Bibliotecaa {
     
     //ATUALIZAR USUARIO
     UsuarioDAO usuarioDAO = new UsuarioDAO();
-    Usuario usuario = new Usuario(0,"","","","");
+    Usuario usuario = new Usuario();
         
     try{
         usuarioDAO.atualizarUsuario(usuario);
