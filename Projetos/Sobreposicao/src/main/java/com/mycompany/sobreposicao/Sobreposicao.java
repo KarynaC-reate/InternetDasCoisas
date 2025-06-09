@@ -18,5 +18,6 @@ public class Sobreposicao {
         maya.corPelo();
         System.out.println(maya.getCorPelo());
         
+        
     }
 }

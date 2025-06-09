@@ -287,14 +287,14 @@ private final UsuarioDAO usuarioDAO = new UsuarioDAO(); //private final ninguém
     private void btnBuscarIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarIDActionPerformed
         try{
         //solicita o id 
-        String input = JOptionPane.showInputDialog(this, "Digite o ID do usuario: ");
+        String IDinput = JOptionPane.showInputDialog(this, "Digite o ID do usuario: ");
             
         //valida se foi digitado algo
-        if (input == null || input.trim().isEmpty()) {
+        if (IDinput == null || IDinput.trim().isEmpty()) {
             return; // Usuario cancelou ou não digitou nada
         }
             
-        int id = Integer.parseInt(input.trim()); //Converte para inteiro
+        int id = Integer.parseInt(IDinput.trim()); //Converte para inteiro
         
         //busca o usuario pelo id
         Usuario usuario = usuarioDAO.buscarUsuarioPorId(id);
@@ -336,23 +336,20 @@ private final UsuarioDAO usuarioDAO = new UsuarioDAO(); //private final ninguém
 
     //ALTERAR
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
-
+        
        String nome = txtNome.getText();
        String email = txtEmail.getText();
        String telefone = txtTelefone.getText();
        String tipo_usuario = txtTipo.getText();
-       
-       atualizarUsuario();
-       listarUsuarios();
-        
-       /* try{
-        String input = JOptionPane.showInputDialog(this, "Digite o ID do usuario para alterar: ");
+               
+        try{
+        String inputID = JOptionPane.showInputDialog(this, "Digite o ID do usuario para alterar: ");
             
-        if (input == null || input.trim().isEmpty()) {
+        if (inputID == null || inputID.trim().isEmpty()) {
             return; 
         }
             
-        int id = Integer.parseInt(input.trim());
+        int id = Integer.parseInt(inputID.trim());
         
         Usuario usuario = usuarioDAO.buscarUsuarioPorId(id);
         
@@ -367,10 +364,10 @@ private final UsuarioDAO usuarioDAO = new UsuarioDAO(); //private final ninguém
         JOptionPane.showMessageDialog(this, "ID invalido. Digite um numero. ");
     }catch (SQLException e) {
         JOptionPane.showMessageDialog(this, "Erro ao buscar usuario:\n " + e.getMessage());
-    }*/
-      
+    }
     }//GEN-LAST:event_btnAlterarActionPerformed
-         
+
+    
     
     /**
      * @param args the command line arguments

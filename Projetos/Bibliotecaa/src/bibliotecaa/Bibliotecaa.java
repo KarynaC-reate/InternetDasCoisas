@@ -63,14 +63,16 @@ public class Bibliotecaa {
     //ATUALIZAR USUARIO
     UsuarioDAO usuarioDAO = new UsuarioDAO();
     Usuario usuario = new Usuario();
+
+//    usuario.setNome("Chico");
+//    usuario.setEmail("chico@gmail.com");
+//    usuario.setTelefone("61-999");
+//    usuario.setTipo_usuario("Aluno");
         
     try{
         usuarioDAO.atualizarUsuario(usuario);
     }catch (SQLException e) {
         System.out.println("DEU ERRADO ");
     }
-   
-    }
+   }
 }
-    
-

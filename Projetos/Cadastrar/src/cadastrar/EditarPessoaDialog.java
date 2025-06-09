@@ -1,11 +1,20 @@
-
 package cadastrar;
 
+import java.sql.SQLException;
+
 public class EditarPessoaDialog {
-    public EditarPessoaDialog(JanelaCadastro aThis, Pessoa pessoa, PessoaDAO pessoaDAO) {
-    }
     
-    void setVisible(boolean b) {
-        throw new UnsupportedOperationException("Not supported yet."); // Generated from nbfs://nbhost/SystemFileSystem/Templates/Classes/Code/GeneratedMethodBody
+    EditarPessoaDialog(JanelaCadastro aThis, Pessoa pessoa, PessoaDAO pessoaDAO) {
+        
+    try{
+        pessoaDAO.atualizarPessoa(pessoa);
+    }catch (SQLException e) {
+        System.out.println("DEU ERRADO ");
     }
+    }
+
+    void setVisible(boolean b) {
+        throw new UnsupportedOperationException("Not supported yet.");
+    }
+   
 }

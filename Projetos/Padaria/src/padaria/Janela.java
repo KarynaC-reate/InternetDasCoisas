@@ -42,7 +42,7 @@ public class Janela extends javax.swing.JFrame {
         jLabel6.setText("Comidas Cadastradas");
 
         btnCadastrados.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnCadastrados.setForeground(new java.awt.Color(0, 102, 204));
+        btnCadastrados.setForeground(new java.awt.Color(0, 204, 51));
         btnCadastrados.setText("Buscar");
         btnCadastrados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -66,7 +66,7 @@ public class Janela extends javax.swing.JFrame {
         jScrollPane1.setViewportView(tblTabela);
 
         btnBuscarID.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnBuscarID.setForeground(new java.awt.Color(0, 102, 204));
+        btnBuscarID.setForeground(new java.awt.Color(0, 204, 51));
         btnBuscarID.setText("Buscar por ID");
         btnBuscarID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -75,7 +75,7 @@ public class Janela extends javax.swing.JFrame {
         });
 
         btnAlterar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnAlterar.setForeground(new java.awt.Color(0, 102, 204));
+        btnAlterar.setForeground(new java.awt.Color(0, 204, 51));
         btnAlterar.setText("Alterar/Deletar");
         btnAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -84,7 +84,7 @@ public class Janela extends javax.swing.JFrame {
         });
 
         btnSalvar.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        btnSalvar.setForeground(new java.awt.Color(0, 102, 255));
+        btnSalvar.setForeground(new java.awt.Color(0, 204, 51));
         btnSalvar.setText("Salvar");
         btnSalvar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -214,7 +214,7 @@ public class Janela extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_btnCadastradosActionPerformed
 
-    //BUSCAR
+    //BUSCAR ID
     private void btnBuscarIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarIDActionPerformed
         try{
             //solicita o id
@@ -282,7 +282,7 @@ public class Janela extends javax.swing.JFrame {
                 EditarComidaDialog dialog = new EditarComidaDialog(this, comida, comidaDAO);
                 dialog.setVisible(true);
             }else {
-                JOptionPane.showMessageDialog(this, "Comida com ID " + id + "nao encontrado. ");
+                JOptionPane.showMessageDialog(this, "Comida com ID " + id + " nao encontrado. ");
             }
 
         }catch (NumberFormatException e) {

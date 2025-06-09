@@ -1,7 +1,6 @@
 //main da classe caneta
 package com.mycompany.classesproject7;
 
-
 public class Classesproject7 {
 
     public static void main(String[] args) {
