@@ -9,6 +9,7 @@ public class ContaBanco {
 
     //abrir conta
     public void abrirConta(String numero, double saldoInicial){
+        
         for (Conta conta : contas) {
             if(conta.getNumero().equals(numero)){
                 throw new IllegalArgumentException("Erro: conta ja existe");

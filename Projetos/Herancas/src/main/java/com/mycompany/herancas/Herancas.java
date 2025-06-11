@@ -10,7 +10,7 @@ public class Herancas {
         alunos[0]=new Aluno("222","TI","Gerivaldo",26,"M");
         
         alunos[0]=new Aluno("333","TI","Creuza",28,"F");
-        
-        
+    
     }
+    
 }

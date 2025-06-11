@@ -22,7 +22,5 @@ public class Animal {
     public void setAnimal(String animal) {
         this.animal = animal;
     }
-       
-    
     
 }
