@@ -8,7 +8,6 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;      
 
-
 public class UsuarioDAO {
     private final Connection connection;
     
@@ -128,18 +127,17 @@ public class UsuarioDAO {
     //UPDATE 
     public void atualizarUsuario(Usuario usuario) throws SQLException {
         String sql = "UPDATE tb_usuarios SET nome = ?, email = ?, telefone = ?, tipo_usuario = ? WHERE id = ?";
+        PreparedStatement pstm = null;
         
-        try(Connection conn = ConnectionFactory.getConnection();
-            PreparedStatement stmt = conn.prepareStatement(sql)) {
+        try{
+            pstm = connection.prepareStatement(sql);
+            pstm.setString(1, usuario.getNome());
+            pstm.setString(2, usuario.getEmail());
+            pstm.setString(3, usuario.getTelefone());
+            pstm.setString(4, usuario.getTipo_usuario());
+            pstm.setInt(5, usuario.getId());
             
-            stmt.setString(1, usuario.getNome());
-            stmt.setString(2, usuario.getEmail());
-            stmt.setString(3, usuario.getTelefone());
-            stmt.setString(4, usuario.getTipo_usuario());
-            stmt.setInt(5, usuario.getId());
-            stmt.executeUpdate();
-            
-            int linhasAfetadas = stmt.executeUpdate();
+            int linhasAfetadas = pstm.executeUpdate();
             if (linhasAfetadas > 0) {
                 System.out.println("Usuario atualizado com sucesso. ");
             }else{
@@ -147,6 +145,8 @@ public class UsuarioDAO {
             }
         }catch (SQLException e) {
             System.out.println("Erro ao atualizar usuario: " + e.getMessage());
+        }finally{
+            if (pstm !=null)pstm.close();
         }
     }
 }
