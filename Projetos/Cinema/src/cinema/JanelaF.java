@@ -48,14 +48,14 @@ public class JanelaF extends javax.swing.JFrame {
         tblTabela.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tblTabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null},
-                {null, null, null},
-                {null, "", null},
-                {null, null, null},
-                {null, null, null}
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, "", null},
+                {null, null, null, null},
+                {null, null, null, null}
             },
             new String [] {
-                "Título:", "Gênero:", "Ano:"
+                "Id:", "Título:", "Gênero:", "Ano:"
             }
         ));
         jScrollPane1.setViewportView(tblTabela);

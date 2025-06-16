@@ -3,7 +3,6 @@ package carros;
 import java.sql.SQLException;
 import java.util.List;
 import javax.swing.JOptionPane;
-import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
 
 public class JanelaPrincipal extends javax.swing.JFrame {
@@ -57,13 +56,13 @@ public class JanelaPrincipal extends javax.swing.JFrame {
 
         tblTabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Marca:", "Ano:", "Tipo:", "Portas:"
+                "Id:", "Marca:", "Ano:", "Tipo:", "Portas:"
             }
         ));
         jScrollPane1.setViewportView(tblTabela);

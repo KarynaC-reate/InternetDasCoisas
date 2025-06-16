@@ -203,16 +203,16 @@ public class JanelaFrutas extends javax.swing.JFrame {
             model.setRowCount(0);
 
             //busca os dados
-            List<Usuario> usuarios = usuarioDAO.listarUsuarios();
+            List<Fruta> frutas = frutaDAO.listarFrutas();
 
             //preenche a tabela
-            for (Usuario u : usuarios) {
+            for (Fruta u : frutas) {
                 model.addRow(new Object[]{
                     u.getId(),
                     u.getNome(),
-                    u.getEmail(),
-                    u.getTelefone(),
-                    u.getTipo_usuario(),
+                    u.getQuantidade(),
+                    u.getMaturacao(),
+                    u.getLocalColhido(),
                 });
             }
 
@@ -227,7 +227,7 @@ public class JanelaFrutas extends javax.swing.JFrame {
     private void btnBuscarIDActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnBuscarIDActionPerformed
         try{
             //solicita o id
-            String IDinput = JOptionPane.showInputDialog(this, "Digite o ID do usuario: ");
+            String IDinput = JOptionPane.showInputDialog(this, "Digite o ID da fruta: ");
 
             //valida se foi digitado algo
             if (IDinput == null || IDinput.trim().isEmpty()) {
@@ -237,20 +237,20 @@ public class JanelaFrutas extends javax.swing.JFrame {
             int id = Integer.parseInt(IDinput.trim()); //Converte para inteiro
 
             //busca o usuario pelo id
-            Usuario usuario = usuarioDAO.buscarUsuarioPorId(id);
+            Fruta fruta = frutaDAO.buscarFrutaPorId(id);
 
             //limpa a tabela
             DefaultTableModel model = (DefaultTableModel) tblTabela.getModel();
             model.setRowCount(0);
 
-            if (usuario != null) {
+            if (fruta != null) {
                 //adiciona o usuario na tabela
                 model.addRow(new Object[]{
-                    usuario.getId(),
-                    usuario.getNome(),
-                    usuario.getEmail(),
-                    usuario.getTelefone(),
-                    usuario.getTipo_usuario()
+                    fruta.getId(),
+                    fruta.getNome(),
+                    fruta.getEmail(),
+                    fruta.getTelefone(),
+                    fruta.getTipo_usuario()
                 });
 
             }else {

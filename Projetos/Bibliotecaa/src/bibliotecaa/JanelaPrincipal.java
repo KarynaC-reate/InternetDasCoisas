@@ -35,7 +35,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
         btnSalvarPerformed.setFont(new java.awt.Font("Segoe UI", 3, 14)); // NOI18N
-        btnSalvarPerformed.setForeground(new java.awt.Color(51, 153, 255));
+        btnSalvarPerformed.setForeground(new java.awt.Color(0, 0, 255));
         btnSalvarPerformed.setText("Salvar");
         btnSalvarPerformed.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -68,7 +68,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         jLabel6.setText("Usuários Cadastrados");
 
         btnCadastrados.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnCadastrados.setForeground(new java.awt.Color(0, 153, 255));
+        btnCadastrados.setForeground(new java.awt.Color(0, 0, 255));
         btnCadastrados.setText("Cadastrados");
         btnCadastrados.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -80,19 +80,19 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         tblTabela.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tblTabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Nome:", "Email:", "Telefone:", "Tipo:"
+                "ID:", "Nome:", "Email:", "Telefone:", "Tipo:"
             }
         ));
         jScrollPane1.setViewportView(tblTabela);
 
         btnBuscarID.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnBuscarID.setForeground(new java.awt.Color(0, 153, 255));
+        btnBuscarID.setForeground(new java.awt.Color(0, 0, 255));
         btnBuscarID.setText("Buscar por ID");
         btnBuscarID.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -101,7 +101,7 @@ public class JanelaPrincipal extends javax.swing.JFrame {
         });
 
         btnAlterar.setFont(new java.awt.Font("Segoe UI", 1, 14)); // NOI18N
-        btnAlterar.setForeground(new java.awt.Color(0, 153, 255));
+        btnAlterar.setForeground(new java.awt.Color(0, 0, 255));
         btnAlterar.setText("Alterar/Deletar");
         btnAlterar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -146,9 +146,6 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                                 .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 141, javax.swing.GroupLayout.PREFERRED_SIZE)))
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addGap(175, 175, 175)
-                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE))
-                            .addGroup(layout.createSequentialGroup()
                                 .addGap(37, 37, 37)
                                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 359, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
@@ -157,7 +154,10 @@ public class JanelaPrincipal extends javax.swing.JFrame {
                                 .addGap(18, 18, 18)
                                 .addComponent(btnCadastrados)
                                 .addGap(18, 18, 18)
-                                .addComponent(btnAlterar)))))
+                                .addComponent(btnAlterar))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(106, 106, 106)
+                                .addComponent(jLabel6, javax.swing.GroupLayout.PREFERRED_SIZE, 201, javax.swing.GroupLayout.PREFERRED_SIZE)))))
                 .addGap(49, 49, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(

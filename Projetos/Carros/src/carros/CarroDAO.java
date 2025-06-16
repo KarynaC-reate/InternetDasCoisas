@@ -121,7 +121,7 @@ public class CarroDAO {
     
     //UPDATE 
     public void atualizarUsuario(Carro carro) throws SQLException {
-        String sql = "UPDATE tb_usuarios SET nome = ?, email = ?, telefone = ?, tipo_usuario = ? WHERE id = ?";
+        String sql = "UPDATE Carros SET marca = ?, ano = ?, tipo = ?, portas = ? WHERE id = ?";
         
         try(Connection conn = ConnectionFactory.getConnection();
             PreparedStatement stmt = conn.prepareStatement(sql)) {
