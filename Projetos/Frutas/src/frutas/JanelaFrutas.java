@@ -24,9 +24,9 @@ public class JanelaFrutas extends javax.swing.JFrame {
         btnAlterar = new javax.swing.JButton();
         btnSalvarPerformed = new javax.swing.JButton();
         txtNome = new javax.swing.JTextField();
-        txtEmail = new javax.swing.JTextField();
-        txtTelefone = new javax.swing.JTextField();
-        txtTipo = new javax.swing.JTextField();
+        txtQuantidade = new javax.swing.JTextField();
+        txtMaturacao = new javax.swing.JTextField();
+        txtLocalColhido = new javax.swing.JTextField();
         jLabel1 = new javax.swing.JLabel();
         jLabel2 = new javax.swing.JLabel();
         jLabel3 = new javax.swing.JLabel();
@@ -53,13 +53,13 @@ public class JanelaFrutas extends javax.swing.JFrame {
         tblTabela.setFont(new java.awt.Font("Segoe UI", 0, 14)); // NOI18N
         tblTabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Nome:", "Email:", "Telefone:", "Tipo:"
+                "Id:", "Nome:", "Email:", "Telefone:", "Tipo:"
             }
         ));
         jScrollPane1.setViewportView(tblTabela);
@@ -91,9 +91,9 @@ public class JanelaFrutas extends javax.swing.JFrame {
             }
         });
 
-        txtTelefone.addActionListener(new java.awt.event.ActionListener() {
+        txtMaturacao.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                txtTelefoneActionPerformed(evt);
+                txtMaturacaoActionPerformed(evt);
             }
         });
 
@@ -124,12 +124,12 @@ public class JanelaFrutas extends javax.swing.JFrame {
                                     .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 76, javax.swing.GroupLayout.PREFERRED_SIZE))
                                 .addGap(19, 19, 19)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                                    .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                    .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                    .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(txtMaturacao, javax.swing.GroupLayout.PREFERRED_SIZE, 163, javax.swing.GroupLayout.PREFERRED_SIZE)))
                             .addGroup(layout.createSequentialGroup()
                                 .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 83, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(txtTipo))))
+                                .addComponent(txtLocalColhido))))
                     .addGroup(layout.createSequentialGroup()
                         .addGap(10, 10, 10)
                         .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 62, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -172,15 +172,15 @@ public class JanelaFrutas extends javax.swing.JFrame {
                             .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(39, 39, 39)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtEmail, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtQuantidade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 31, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(37, 37, 37)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(txtTelefone, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addComponent(txtMaturacao, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                         .addGap(37, 37, 37)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(txtTipo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(txtLocalColhido, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                             .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 28, javax.swing.GroupLayout.PREFERRED_SIZE)))
                     .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 220, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
@@ -248,14 +248,14 @@ public class JanelaFrutas extends javax.swing.JFrame {
                 model.addRow(new Object[]{
                     fruta.getId(),
                     fruta.getNome(),
-                    fruta.getEmail(),
-                    fruta.getTelefone(),
-                    fruta.getTipo_usuario()
+                    fruta.getQuantidade(),
+                    fruta.getMaturacao(),
+                    fruta.getLocalColhido()
                 });
 
             }else {
                 JOptionPane.showMessageDialog(this,
-                    "Usuario com ID " + id + "nao encontrado. ",
+                    "Fruta com ID " + id + "nao encontrado. ",
                     "Nao encontrado",
                     JOptionPane.INFORMATION_MESSAGE);
             }
@@ -268,7 +268,7 @@ public class JanelaFrutas extends javax.swing.JFrame {
 
         }catch (SQLException e) {
             JOptionPane.showMessageDialog(this,
-                "Erro ao buscar usuario: " + e.getMessage(),
+                "Erro ao buscar fruta: " + e.getMessage(),
                 "Erro",
                 JOptionPane.INFORMATION_MESSAGE);
         }
@@ -276,7 +276,7 @@ public class JanelaFrutas extends javax.swing.JFrame {
 
     private void btnAlterarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnAlterarActionPerformed
         try{
-            String inputID = JOptionPane.showInputDialog(this, "Digite o ID do usuario para alterar: ");
+            String inputID = JOptionPane.showInputDialog(this, "Digite o ID da fruta para alterar: ");
 
             if (inputID == null || inputID.trim().isEmpty()) {
                 return;
@@ -284,19 +284,19 @@ public class JanelaFrutas extends javax.swing.JFrame {
 
             int id = Integer.parseInt(inputID.trim());
 
-            Usuario usuario = usuarioDAO.buscarUsuarioPorId(id);
+            Fruta fruta = frutaDAO.buscarFrutaPorId(id);
 
-            if (usuario !=null) {
-                EditarUsuarioDialog dialog = new EditarUsuarioDialog(this, usuario, usuarioDAO);
+            if (fruta !=null) {
+                EditarFrutaDialog dialog = new EditarFrutaDialog(this, fruta, frutaDAO);
                 dialog.setVisible(true);
             }else {
-                JOptionPane.showMessageDialog(this, "Usuario com ID " + id + "nao encontrado. ");
+                JOptionPane.showMessageDialog(this, "Fruta com ID " + id + "nao encontrado. ");
             }
 
         }catch (NumberFormatException e) {
             JOptionPane.showMessageDialog(this, "ID invalido. Digite um numero. ");
         }catch (SQLException e) {
-            JOptionPane.showMessageDialog(this, "Erro ao buscar usuario:\n " + e.getMessage());
+            JOptionPane.showMessageDialog(this, "Erro ao buscar fruta:\n " + e.getMessage());
         }
     }//GEN-LAST:event_btnAlterarActionPerformed
 
@@ -304,12 +304,12 @@ public class JanelaFrutas extends javax.swing.JFrame {
 
         //1. coleta e sanitiza entradas
         String nome = txtNome.getText().trim();
-        String email = txtEmail.getText().trim();
-        String telefone = txtTelefone.getText().trim();
-        String tipo = txtTipo.getText().trim();
+        String quantidade = txtQuantidade.getText().trim();
+        String maturacao = txtMaturacao.getText().trim();
+        String localColhido = txtLocalColhido.getText().trim();
 
         //2. validação rápida de obrigatórios
-        if (nome.isEmpty() || email.isEmpty() || telefone.isEmpty() || tipo.isEmpty()) {
+        if (nome.isEmpty() || quantidade.isEmpty() || maturacao.isEmpty() || localColhido.isEmpty()) {
             JOptionPane.showMessageDialog(this,
                 "❗ Preencha todos os campos antes de salvar.",
                 "Campos obrigatórios.",
@@ -318,30 +318,30 @@ public class JanelaFrutas extends javax.swing.JFrame {
         }
 
         //3. monta o modelo - id como 0, assumindo que o banco trata como AUTO_INCREMENT
-        Usuario usuario = new Usuario(0, nome, email, telefone, tipo);
+        Fruta fruta = new Fruta(0, nome, quantidade, maturacao, localColhido);
 
         //4. persiste e dá feedback à interface
         try{
-            usuarioDAO.criarUsuario(usuario);
+            frutaDAO.criarFruta(fruta);
             JOptionPane.showMessageDialog(this,
-                "✔ Usuario salvo com sucesso!",
+                "✔ Fruta salvo com sucesso!",
                 "✔ Sucesso",
                 JOptionPane.INFORMATION_MESSAGE);
 
         }catch (SQLException ex){
-            java.util.logging.Logger.getLogger(getClass().getName()).log(java.util.logging.Level.SEVERE,"Erro ao salvar usuario", ex);
+            java.util.logging.Logger.getLogger(getClass().getName()).log(java.util.logging.Level.SEVERE,"Erro ao salvar fruta", ex);
             JOptionPane.showMessageDialog(this,
-                "Não foi possível salvar o usuario.\nDetalhes: " + ex.getMessage(),
+                "Não foi possível salvar a fruta.\nDetalhes: " + ex.getMessage(),
                 "Erro",
                 JOptionPane.ERROR_MESSAGE);
             System.out.println("Deu errado. ");
-        }
 
+        }
     }//GEN-LAST:event_btnSalvarPerformedActionPerformed
 
-    private void txtTelefoneActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtTelefoneActionPerformed
+    private void txtMaturacaoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_txtMaturacaoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_txtTelefoneActionPerformed
+    }//GEN-LAST:event_txtMaturacaoActionPerformed
 
     /**
      * @param args the command line arguments
@@ -391,9 +391,9 @@ public class JanelaFrutas extends javax.swing.JFrame {
     private javax.swing.JLabel jLabel6;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTable tblTabela;
-    private javax.swing.JTextField txtEmail;
+    private javax.swing.JTextField txtLocalColhido;
+    private javax.swing.JTextField txtMaturacao;
     private javax.swing.JTextField txtNome;
-    private javax.swing.JTextField txtTelefone;
-    private javax.swing.JTextField txtTipo;
+    private javax.swing.JTextField txtQuantidade;
     // End of variables declaration//GEN-END:variables
 }

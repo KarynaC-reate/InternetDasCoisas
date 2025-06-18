@@ -60,13 +60,13 @@ public class JanelaCadastro extends javax.swing.JFrame {
         tblTabela.setBorder(new javax.swing.border.MatteBorder(null));
         tblTabela.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null},
+                {null, null, null, null, null}
             },
             new String [] {
-                "Nome:", "Email:", "Idade:", "Sexo:"
+                "Id:", "Nome:", "Email:", "Idade:", "Sexo:"
             }
         ));
         jScrollPane1.setViewportView(tblTabela);

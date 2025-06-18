@@ -17,7 +17,7 @@ public class EditarFilmeDialog extends JDialog{
     private Filme filme;
     private FilmeDAO filmeDAO;
 
-        public EditarFilmeDialog(Filme filme, FilmeDAO filmeDAO) {
+        public EditarFilmeDialog(Frame parent, Filme filme, FilmeDAO filmeDAO) {
             super(parent, "Editar filme", true);
             this.filme = filme;
             this.filmeDAO = filmeDAO;
@@ -44,7 +44,7 @@ public class EditarFilmeDialog extends JDialog{
         btnSalvar = new JButton("Salvar Alterações");
         btnSalvar.addActionListener(e -> salvarAlteracoes());
         
-        btnDeletar = new JButton("Deletar usuario");
+        btnDeletar = new JButton("Deletar filme");
         btnDeletar.setForeground(Color.red);
         btnDeletar.addActionListener(e -> deletarFilme());
         

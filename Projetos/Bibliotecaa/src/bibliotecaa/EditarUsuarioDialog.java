@@ -19,6 +19,7 @@ public class EditarUsuarioDialog extends JDialog {
     
     public EditarUsuarioDialog(Frame parent, Usuario usuario, UsuarioDAO usuarioDAO) {
         super(parent, "Editar usuario", true);
+        //constructor
         this.usuario = usuario;
         this.usuarioDAO = usuarioDAO;
         
