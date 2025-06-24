@@ -14,7 +14,7 @@ public class FrutaDAO {
         this.connection = new ConnectionFactory().conectaBD();
     }
     
-    //inserir usuarios
+    //inserir frutas
     public void criarFruta(Fruta fruta) throws SQLException{
         String sql = "INSERT INTO tb_fruta(nome,quantidade,"
                 + "maturacao,local_colhido)VALUES(?,?,?,?)";
@@ -41,7 +41,7 @@ public class FrutaDAO {
             }
         }
     
-    //listar usuarios
+    //listar frutas
     public List<Fruta> listarFrutas()throws SQLException{
         List<Fruta> lista = new ArrayList<>();
         String sql = "SELECT * FROM tb_fruta";
@@ -138,7 +138,7 @@ public class FrutaDAO {
             
             int linhasAfetadas = pstm.executeUpdate();
             if (linhasAfetadas > 0) {
-                System.out.println(" atualizada com sucesso. ");
+                System.out.println("Fruta atualizada com sucesso. ");
             }else{
                 System.out.println("Fruta com ID nao encontrado. ");
             }

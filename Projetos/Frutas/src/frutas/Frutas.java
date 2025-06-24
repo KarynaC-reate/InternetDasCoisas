@@ -6,7 +6,7 @@ import java.sql.SQLException;
 public class Frutas {
 
     public static void main(String[] args) {
-          //INSERIR USUARIO
+          //INSERIR FRUTA
 //        ConnectionFactory conexao = new ConnectionFactory();
 //        
 //        if(conexao.conectaBD() !=null){
@@ -24,7 +24,7 @@ public class Frutas {
 //            System.out.println("Deu ruim ");
 //        }
         
-        //BUSCAR USUARIO
+        //BUSCAR FRUTA
 //        FrutaDAO frutaDAO = new FrutaDAO();
 //        try{
 //            int idBuscado=1;
@@ -47,7 +47,7 @@ public class Frutas {
 //            } 
 //        }   
     
-        //DELETAR USUARIO
+        //DELETAR FRUTA
     
 //        FrutaDAO frutaDAO = new FrutaDAO();
 //        Fruta fruta = new Fruta();
@@ -59,7 +59,7 @@ public class Frutas {
 //        }
 //    }
     
-    //ATUALIZAR USUARIO
+    //ATUALIZAR FRUTA
     FrutaDAO frutaDAO = new FrutaDAO();
     Fruta fruta = new Fruta(2,"Maçã","1900","Madura","Brasília");
         
