@@ -24,7 +24,7 @@ public class EditarUsuarioDialog extends JDialog {
         this.usuarioDAO = usuarioDAO;
         
         setLayout(new GridLayout(6,2,10,10));
-        
+        //horizontal/vertical-Size
         setSize(400,300);
         
         setLocationRelativeTo(parent);
@@ -65,17 +65,17 @@ public class EditarUsuarioDialog extends JDialog {
         
         try {
             usuarioDAO.atualizarUsuario(usuario);
-            JOptionPane.showMessageDialog(this, "Usuario atualizado com sucesso ");
+            JOptionPane.showMessageDialog(this, "Usuario atualizado com sucesso. ");
             dispose();
         } catch (SQLException e) {
-            JOptionPane.showMessageDialog(this, "Erro ao atualizar usuario\n"
+            JOptionPane.showMessageDialog(this, "Erro ao atualizar usuario.\n"
                     + e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
         }
         
     }
     public void deletarUsuario(){
         int confirmacao = JOptionPane.showConfirmDialog(this,
-                "Tem certeza que excluir este usuário?","Confirmação",
+                "Tem certeza que deseja excluir este usuário?","Confirmação",
                 JOptionPane.YES_NO_OPTION);
         
         if(confirmacao == JOptionPane.YES_OPTION){
@@ -85,7 +85,7 @@ public class EditarUsuarioDialog extends JDialog {
                 dispose();
                 
             } catch (SQLException e) {
-                JOptionPane.showMessageDialog(this,"Erro ao deletar usuários\n"
+                JOptionPane.showMessageDialog(this,"Erro ao deletar usuários.\n"
                         +e.getMessage(),"Error",JOptionPane.ERROR_MESSAGE);
             }
         }

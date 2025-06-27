@@ -1,7 +1,6 @@
 package bibliotecaa;
 
 import java.sql.SQLException;
-import java.util.Scanner;
 
 public class Bibliotecaa {
     public static void main(String[] args) {    
