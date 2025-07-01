@@ -30,7 +30,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<java.version>17</java.version>
+=======
+		<java.version>21</java.version>
+>>>>>>> 05ffc1d44259abb94e76379001751be8fa26132a
 =======
 		<java.version>21</java.version>
 >>>>>>> 05ffc1d44259abb94e76379001751be8fa26132a
@@ -47,7 +51,11 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 			<artifactId>spring-boot-starter</artifactId>
+=======
+			<artifactId>spring-boot-starter-web</artifactId>
+>>>>>>> 05ffc1d44259abb94e76379001751be8fa26132a
 =======
 			<artifactId>spring-boot-starter-web</artifactId>
 >>>>>>> 05ffc1d44259abb94e76379001751be8fa26132a
@@ -72,10 +80,13 @@
 <<<<<<< HEAD
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
 				<groupId>org.graalvm.buildtools</groupId>
 				<artifactId>native-maven-plugin</artifactId>
 			</plugin>
 			<plugin>
+=======
+>>>>>>> 05ffc1d44259abb94e76379001751be8fa26132a
 =======
 >>>>>>> 05ffc1d44259abb94e76379001751be8fa26132a
 =======
